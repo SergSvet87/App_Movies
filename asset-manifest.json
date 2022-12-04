@@ -1,0 +1,18 @@
+{
+  "files": {
+    "main.css": "/App_Movies/static/css/main.92630ca8.css",
+    "main.js": "/App_Movies/static/js/main.bbca7f8f.js",
+    "static/media/Kurale-Regular.ttf": "/App_Movies/static/media/Kurale-Regular.9afa76c471c1bd101ba1.ttf",
+    "static/media/OpenSans-Regular.ttf": "/App_Movies/static/media/OpenSans-Regular.77c09223204154ae8d43.ttf",
+    "static/media/OpenSans-Bold.ttf": "/App_Movies/static/media/OpenSans-Bold.fa428cdd2e334e2be904.ttf",
+    "static/media/mainLogo.png": "/App_Movies/static/media/mainLogo.c6fbe1b8934632d26774.png",
+    "static/media/sprite-socials.svg": "/App_Movies/static/media/sprite-socials.4c78e4bbab82e681b3e0379dd5226606.svg",
+    "index.html": "/App_Movies/index.html",
+    "main.92630ca8.css.map": "/App_Movies/static/css/main.92630ca8.css.map",
+    "main.bbca7f8f.js.map": "/App_Movies/static/js/main.bbca7f8f.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.92630ca8.css",
+    "static/js/main.bbca7f8f.js"
+  ]
+}
