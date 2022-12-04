@@ -1,0 +1,1 @@
+export const ALL_FILMS_URL = `https://yts.mx/api/v2/list_movies.json?genre=fantasy&sort_by=year`

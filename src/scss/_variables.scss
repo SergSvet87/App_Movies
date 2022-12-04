@@ -1,0 +1,46 @@
+/*---------------------
+  Variables
+-----------------------*/
+
+// Шрифты
+$ff-openSans: 'OpenSansS', sans-serif;
+$ff-kurale: 'KuraleS', serif;
+
+// Текст
+$fs-text: 16px;
+$fs-title-h1: 72px;
+$fs-title-h2: 42px;
+$fs-title-h3: 18px;
+$fs-title-h4: 24px;
+$fs-title-h5: 18px;
+$fs-title-h6: 12px;
+
+// Размеры контейнера
+$wrap: 1440px;
+$container: 1230px;
+$mc: 0 auto;
+
+// Цвет
+$bg-color: #112d49;
+$primary-color: #ee9b36;
+$white-color: #ffffff;
+$gray-color: #e5e5e5;
+$black-color: #000000;
+$tabs-color: #2d3243;
+
+$tabs-opacity: rgba(51, 51, 51, 0.2);
+$white-opacity: rgba(255, 255, 255, 0.5);
+$black-opacity: rgba(0, 0, 0, 0.5);
+$gray-opacity: rgba(51, 51, 51, 0.5);
+
+$gray: #9b9a97;
+$red: #c62e21;
+
+@keyframes opacity {
+	from {
+		opacity: 0;
+	}
+	to {
+		opacity: 1;
+	}
+}

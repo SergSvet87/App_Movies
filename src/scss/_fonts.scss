@@ -1,0 +1,28 @@
+@font-face {
+  font-family: "KuraleS";
+  src: local("Kurale-Regular");
+  src: local("Kurale Regular");
+  src: url("../assets/fonts/Kurale-Regular.ttf") format("truetype");
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "OpenSansS";
+  src: local("OpenSans-Regular");
+  src: local("OpenSans Regular");
+  src: url("../assets/fonts/OpenSans-Regular.ttf") format("truetype");
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: "OpenSansS";
+  src: local("OpenSans-Bold");
+  src: local("OpenSans Bold");
+  src: url("../assets/fonts/OpenSans-Bold.ttf") format("truetype");
+  font-weight: 700;
+  font-style: normal;
+  font-display: swap;
+}

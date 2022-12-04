@@ -1,0 +1,15 @@
+.header {
+	padding: 20px 40px;
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+
+	> div:first-child {
+		display: flex;
+		align-items: center;
+		> a {
+			display: flex;
+			align-items: center;
+		}
+	}
+}
