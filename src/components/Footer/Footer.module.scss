@@ -1,7 +1,6 @@
 @import '../../scss/style.scss';
 
 .footer {
-  background: $tabs-color;
   color: $white-opacity;
   padding-top: 50px;
   padding-bottom: 50px;
@@ -52,16 +51,16 @@
   max-width: 500px;
   color: $gray-color;
   @include flex(center, center);
+  line-height: 1.7;
 
   i {
     padding: 0 5px;
     font-size: inherit;
   }
-}
 
   address {
     display: inline-block;
-    padding-left: 7px;
+    margin-left: 7px;
 
     a {
       font-weight: 700;
@@ -73,6 +72,7 @@
         color: inherit;
       }
     }
+  }
 }
 
 .animation {

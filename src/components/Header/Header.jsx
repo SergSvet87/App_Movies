@@ -1,3 +1,4 @@
+import logo from '../../assets/img/mainLogo.png'
 import Search from '../../ui/Search/Search'
 import Profile from '../../ui/Profile/Profile'
 
@@ -9,10 +10,10 @@ const Header = () => {
       <div>
         <a href="/">
           <img
-            src="https://www.freepnglogos.com/uploads/netflix-logo-0.png"
-            alt="Netflix"
-            height="35"
-            width="112"
+            src={logo}
+            alt="Kino"
+            height="65"
+            width="180"
           />
         </a>
         <Search />

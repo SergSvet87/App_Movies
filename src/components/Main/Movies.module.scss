@@ -1,0 +1,62 @@
+@import '../../scss/style.scss';
+
+.movies {
+  @include flex(space-between, center);
+
+  .movie {
+    width: 300px;
+    padding: 15px;
+    text-align: center;
+  }
+
+  .poster {
+    position: relative;
+    margin-bottom: 15px;
+
+    .rating {
+      width: 70px;
+      position: absolute;
+      top: 20px;
+      left: 30px;
+      background-color: $tabs-color;
+      padding: 3px;
+      font-size: 12px;
+      border-radius: 15px;
+    }
+
+    .year {
+      width: 80px;
+      position: absolute;
+      bottom: 20px;
+      right: 20px;
+      background-color: $tabs-color;
+      padding: 3px;
+      font-size: 20px;
+      border-radius: 15px;
+    }
+  }
+
+  .text {
+
+    .title {
+      font-family: $ff-kurale;
+      font-size: 24px;
+      margin-bottom: 15px;
+    }
+      
+    .genres {
+      @include flex(center, center);
+      margin-bottom: 35px;
+      
+      .genre {
+        margin: 0 10px 10px;
+      }
+    }
+
+    .summary {
+      font-size: 14px;
+      text-align: left;
+    }
+  }
+}
+

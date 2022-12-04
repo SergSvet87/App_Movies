@@ -1,22 +1,24 @@
 import React from 'react'
 import PropTypes from 'prop-types'
 
+import styles from './Movies.module.scss'
+
 const Movie = ({ id, year, rating, title, summary, poster, genres }) => {
   return (
     <>
-      <div className="item-movie__poster">
-        <p className="item-movie__rating">{rating} / 10</p>
+      <div className={styles.poster}>
+        <p className={styles.rating}>{rating} / 10</p>
         <img src={poster} alt={title} title={title} />
+        <p className={styles.year}>{year}</p>
       </div>
-      <div className="item-movie__text">
-        <h3 className="item-movie__title">{title}</h3>
-        <p className="item-movie__year">{year}</p>
-        <ul className="item-movie__genres">
+      <div className={styles.text}>
+        <h3 className={styles.title}>{title}</h3>
+        <ul className={styles.genres}>
           {genres.map((genre, index) => (
-            <li className="item-movie__genre" key={index}>{genre}</li>
+            <li className={styles.genre} key={index}>{genre}</li>
           ))}
         </ul>
-        <div>{summary}</div>
+        <div className={styles.summary}>{summary.slice(0, 200)}...</div>
       </div>
     </>
   )

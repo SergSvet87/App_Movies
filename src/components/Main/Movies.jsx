@@ -2,12 +2,14 @@ import React from 'react'
 
 import Movie from './Movie'
 
+import styles from './Movies.module.scss'
+
 export const Movies = ({ movies }) => {
   return (
     <main>
-      <ul className="movies">
+      <ul className={styles.movies}>
         {movies.map((movie) => (
-          <li className="movies__item item-movie" key={movie.id}>
+          <li className={styles.movie} key={movie.id}>
             <Movie
               id={movie.id}
               year={movie.year}
