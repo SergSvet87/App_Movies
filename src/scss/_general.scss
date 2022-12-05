@@ -23,17 +23,22 @@ body {
 }
 
 .wrapper {
-  max-width: 100vw;
+  width: 100vw;
   margin: $mc;
-  min-height: 100%;
+  height: 100vh;
   overflow: hidden;
   display: flex;
   flex-direction: column;
 }
+
 .container {
   padding: 0 15px;
   max-width: $container;
   margin: $mc;
+}
+
+.page {
+  flex: 1 1 auto
 }
 
 a {

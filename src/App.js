@@ -1,37 +1,18 @@
 import React from 'react'
-import axios from 'axios'
+import { Routes, Route } from 'react-router-dom'
 
-import { ALL_FILMS_URL } from "./urls"
-import {Movies} from './components/Main/Movies'
-import Header from './components/Header/Header'
-import Footer from './components/Footer/Footer'
-
-import {Loader} from './ui/Loader/Loader'
+import { TVSeries, Movies, Cartoons, About } from './routes/index'
 
 class App extends React.Component {
-  state = {
-    isLoading: true,
-    movies: [],
-  }
-
-  getMovies = async () => {
-    const { data: { data: { movies } } } = await axios.get(ALL_FILMS_URL)
-    this.setState({ movies, isLoading: false })
-  }
-
-  componentDidMount() {
-    this.getMovies()
-  }
 
   render() {
-    const { isLoading, movies } = this.state
-
     return (
-      <section className="container">
-        <Header />
-        {isLoading ? <Loader /> : <Movies movies={movies}/>}
-        <Footer />
-      </section>
+      <Routes>
+        <Route path="/series" element={<TVSeries />} />
+        <Route path="/" exact element={<Movies />} />
+        <Route path="/animation" element={<Cartoons />} />
+        <Route path="/about" element={<About />} />
+      </Routes >
     )
   }
 }

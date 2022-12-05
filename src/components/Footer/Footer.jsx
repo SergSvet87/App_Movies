@@ -59,7 +59,7 @@ const icons = [
   },
 ]
 
-function Footer() {
+export const Footer = () => {
   return (
     <footer className={styles.footer}>
       <ul className={styles.social}>
@@ -137,5 +137,3 @@ function Footer() {
     </footer>
   )
 }
-
-export default Footer

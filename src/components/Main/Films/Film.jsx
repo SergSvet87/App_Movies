@@ -1,9 +1,9 @@
 import React from 'react'
 import PropTypes from 'prop-types'
 
-import styles from './Movies.module.scss'
+import styles from './Films.module.scss'
 
-const Movie = ({ id, year, rating, title, summary, poster, genres }) => {
+export const Film = ({ id, year, rating, title, summary, poster, genres }) => {
   return (
     <>
       <div className={styles.poster}>
@@ -18,13 +18,13 @@ const Movie = ({ id, year, rating, title, summary, poster, genres }) => {
             <li className={styles.genre} key={index}>{genre}</li>
           ))}
         </ul>
-        <div className={styles.summary}>{summary.slice(0, 200)}...</div>
+        <div className={styles.summary}>{summary.slice(0, 150)}...</div>
       </div>
     </>
   )
 }
 
-Movie.propTypes = {
+Film.propTypes = {
   id: PropTypes.number.isRequired,
   year: PropTypes.number.isRequired,
   rating: PropTypes.number.isRequired,
@@ -33,5 +33,3 @@ Movie.propTypes = {
   poster: PropTypes.string.isRequired,
   genres: PropTypes.arrayOf(PropTypes.string).isRequired,
 }
-
-export default Movie

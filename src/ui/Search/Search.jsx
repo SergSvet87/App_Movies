@@ -1,6 +1,6 @@
 import styles from './Search.module.scss'
 
-const Search = () => {
+export const Search = () => {
   return (
     <div className={styles.search}>
       <div>
@@ -11,5 +11,3 @@ const Search = () => {
     </div>
   )
 }
-
-export default Search

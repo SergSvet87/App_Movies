@@ -1,6 +1,6 @@
 import styles from './Profile.module.scss'
 
-const Profile = () => {
+export const Profile = () => {
   return (
     <div className={styles['profile-wrapper']}>
       <div className={styles.notification}>
@@ -19,5 +19,3 @@ const Profile = () => {
     </div>
   )
 }
-
-export default Profile
