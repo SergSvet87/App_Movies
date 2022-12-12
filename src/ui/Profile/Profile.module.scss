@@ -1,6 +1,7 @@
 .notification {
 	position: relative;
-	margin-right: 1.5rem;
+	margin-right: 4.5rem;
+	cursor: pointer;
 
 	> i {
 		color: #fff;
@@ -22,6 +23,7 @@
 .profile-wrapper {
 	display: flex;
 	align-items: center;
+	cursor: pointer;
 }
 
 .profile {

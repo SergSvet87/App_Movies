@@ -20,12 +20,17 @@ class Movies extends React.Component {
     this.getMovies()
   }
 
+  onSubmitHandler = (e) => {
+    e.preventDefault()
+    // setTextSearch('')
+  }
+
   render() {
     const { isLoading, movies } = this.state
-    
+
     return (
       <div className="wrapper">
-        <Header />
+        <Header onSubmitHandler={this.onSubmitHandler}/>
         {isLoading ? <Loader /> : <Films movies={movies} />}
         <Footer />
       </div >

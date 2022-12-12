@@ -4,24 +4,17 @@ import { Link } from 'react-router-dom'
 
 import styles from './Navigation.module.scss'
 
-export const Navigation = () => {
+export const Navigation = ({ items }) => {
   const [isActive, setIsActive] = useState(false)
 
   return (
-    <nav>
-      <ul className={styles.nav}>
-        <li className={`${isActive ? '' : styles.active}`}>
-          <Link to="/series">Series</Link>
-        </li>
-        <li className={`${isActive ? styles.active : ''}`}>
-          <Link to="/">Movie</Link>
-        </li>
-        <li>
-          <Link to="/animation">Animation</Link>
-        </li>
-        <li>
-          <Link to="/about">About</Link>
-        </li>
+    <nav className={styles.nav}>
+      <ul className={styles.navList}>
+        {items.map((item, index) => (
+          <li className={styles['nav-item']} key={index}>
+            <Link className={isActive ? styles.active : ''} to={item}>{item}</Link>
+          </li>
+        ))}
       </ul>
     </nav>
   )

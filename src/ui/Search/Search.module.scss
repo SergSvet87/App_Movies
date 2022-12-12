@@ -1,24 +1,24 @@
 @import '../../scss/style.scss';
 
 .search {
-	margin-left: 1rem;
+	width: 37%;
 	display: flex;
 	align-items: center;
 	border-radius: 30px;
 	background-color: #000;
 	border: 1px solid rgba($gray, 0.4);
-	padding: 0.5rem 1rem;
+	padding: 1rem 1.5rem;
 
-	> div {
-		display: flex;
-		align-items: center;
+	form {		
+		display: inline-flex;
+		flex: 1 1 auto;
 	}
 
 	input {
 		background-color: transparent;
 		outline: none;
 		color: #fff;
-		margin-left: 0.5rem;
+		margin-left: 1.5rem;
 		border: none;
 		
 		&::placeholder {

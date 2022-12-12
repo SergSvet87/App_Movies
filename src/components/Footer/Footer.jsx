@@ -62,21 +62,22 @@ const icons = [
 export const Footer = () => {
   return (
     <footer className={styles.footer}>
-      <ul className={styles.social}>
-        {icons.map((icon) => (
-          <li className={styles.socialItem} key={icon._id}>
-            <a
-              // target="_blank"
-              href={icon.href}
-              className="social-link"
-            >
-              <Icon name={icon.name} size={icon.size} />
-            </a>
-          </li>
-        ))}
-      </ul>
+      <div className={`container ${styles.container}`}>
+        <ul className={styles.social}>
+          {icons.map((icon) => (
+            <li className={styles.socialItem} key={icon._id}>
+              <a
+                // target="_blank"
+                href={icon.href}
+                className="social-link"
+              >
+                <Icon name={icon.name} size={icon.size} />
+              </a>
+            </li>
+          ))}
+        </ul>
 
-      {/* <div className="col-xl-2 col-lg-6 col-md-6 col-sm-4">
+        {/* <div className="col-xl-2 col-lg-6 col-md-6 col-sm-4">
             <div className="footer__animation animation">
               <a
                 href="https://sergsvet87.github.io/My_RESUME/"
@@ -122,17 +123,18 @@ export const Footer = () => {
               </a>
             </div>
           </div> */}
-      <div className={styles.copyright}>
-        &copy; Copyright {new Date().getFullYear()} All rights reserved | This
-        template is made with <i className="bx bxs-heart"></i> in
-        <address className="footer__address">
-          <a
-            href="https://sergsvet87.github.io/My_Portfolio/"
-            // target="_blank"
-          >
-            Ukraine, Kharkiv
-          </a>
-        </address>
+        <div className={styles.copyright}>
+          &copy; Copyright {new Date().getFullYear()} All rights reserved | This
+          template is made with <i className="bx bxs-heart"></i> in
+          <address className="footer__address">
+            <a
+              href="https://sergsvet87.github.io/My_Portfolio/"
+              // target="_blank"
+            >
+              Ukraine, Kharkiv
+            </a>
+          </address>
+        </div>
       </div>
     </footer>
   )

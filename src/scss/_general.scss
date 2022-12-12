@@ -7,13 +7,6 @@
   box-sizing: border-box;
 }
 
-*,
-*::before,
-*::after {
-  margin: 0;
-  padding: 0;
-}
-
 body {
   background: $bg-color;
   font-family: $ff-openSans, sans-serif;
@@ -23,9 +16,7 @@ body {
 }
 
 .wrapper {
-  width: 100vw;
-  margin: $mc;
-  height: 100vh;
+  height: 100%;
   overflow: hidden;
   display: flex;
   flex-direction: column;
@@ -33,7 +24,7 @@ body {
 
 .container {
   padding: 0 15px;
-  max-width: $container;
+  width: $container;
   margin: $mc;
 }
 

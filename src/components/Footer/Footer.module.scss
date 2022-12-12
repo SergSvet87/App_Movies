@@ -7,10 +7,13 @@
   @include flex(space-between, center);
 }
 
-.social {
-  max-width: 300px;
+.container {
   @include flex(space-between, center);
-  list-style: none;
+}
+
+.social {
+  width: 30%;
+  @include flex(space-between, center);
 
   > li {
     width: 35px;
@@ -48,7 +51,7 @@
 }
 
 .copyright {
-  max-width: 500px;
+  width: 60%;
   color: $gray-color;
   @include flex(center, center);
   line-height: 1.7;

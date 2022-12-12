@@ -2,13 +2,11 @@
 
 .header {
 	padding: 20px 40px;
-	display: flex;
-	align-items: center;
-	justify-content: space-between;
+	margin-bottom: 50px;
 
-	> div:first-child {
-		display: flex;
-		align-items: center;
+	.top {
+		@include flex(space-between, center);
+		margin-bottom: 20px;
 
 		> a {
 			display: flex;
@@ -16,5 +14,13 @@
 			background-color: $white-color;
 			border-radius: 50%;
 		}
+	}
+
+	.bottom {
+		height: 120px;
+		@include flex(space-between, center);
+		background-color: $bg-header;
+		border-radius: 50px;
+		padding-right: 100px;
 	}
 }
