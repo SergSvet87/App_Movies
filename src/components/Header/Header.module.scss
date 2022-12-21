@@ -7,13 +7,31 @@
 	.top {
 		@include flex(space-between, center);
 		margin-bottom: 20px;
+	}
 
-		> a {
-			display: flex;
-			align-items: center;
-			background-color: $white-color;
-			border-radius: 50%;
+	.logo {
+		width: 200px;
+		height: 50px;
+		display: inline-flex;
+		align-items: center;
+		font-weight: bold;
+		font-size: 28px;
+
+		img {
+			margin-right: 7px;
 		}
+
+		span {
+			color: $primary-color;
+		}		
+	}
+
+	.navTop {
+		width: 30%;
+	}
+	
+	.navBottom {
+		width: 55%;
 	}
 
 	.bottom {

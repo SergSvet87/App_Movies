@@ -1,0 +1,26 @@
+.error {
+  width: 250px;
+  height: 100px;
+  margin: 0 auto;
+  text-align: center;
+  font-size: 20px;
+
+  p {
+    margin-bottom: 15px;
+  }
+
+  pre {
+    margin-bottom: 15px;
+  }
+
+  button {
+    padding: 8px 15px;
+    border-radius: 8px;
+    border: none;
+    cursor: pointer;
+
+    &:hover {
+      background: darken($color: #fff, $amount: 15%);
+    }
+  }
+}

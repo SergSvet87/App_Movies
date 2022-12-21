@@ -1,0 +1,29 @@
+@import '../../../scss/variables';
+
+.notFound {
+  text-align: center;
+
+  .image {
+    position: relative;
+  }
+  
+  .title {
+    position: absolute;
+    top: 50%;
+    left: calc(50% - 120px);
+    font-size: 140px;
+  }
+
+  .text {
+    margin: 15px 0;
+    font-size: 28px;
+  }
+
+  .link {
+    color: $primary-color;
+
+    &:hover {
+      text-decoration: underline;
+    }
+  }
+}
