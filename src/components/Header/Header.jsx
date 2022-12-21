@@ -1,6 +1,8 @@
 import React from 'react';
+import { NavLink } from 'react-router-dom';
 
-import logo from '../../assets/img/mainLogo.png';
+import { PATHS } from '../../utils/urls';
+import logo from '../../assets/img/logo.png';
 import { Search } from '../ui/search/Search';
 import { Profile } from '../ui/profile/Profile';
 import { Navigation } from '../ui/navigation/Navigation';
@@ -44,14 +46,15 @@ export const Header = ({ onSubmitHandler }) => {
     <header className={styles.header}>
       <div className="container">
         <div className={styles.top}>
-          <a href="/">
-            <img src={logo} alt="My Logo" height="65" width="180" />
-          </a>
-          <Navigation items={films} />
+          <NavLink className={styles.logo} to={PATHS.home}>
+            <img src={logo} alt="My Logo" width={50} height={40} />
+            <span>M</span>OVIE<span>S</span>
+          </NavLink>
+          <Navigation className={styles.navTop} items={films} />
           <Profile />
         </div>
         <div className={styles.bottom}>
-          <Navigation items={genres} />
+          <Navigation className={styles.navBottom} items={genres} />
           <Search onSubmitHandler={onSubmitHandler} />
         </div>
       </div>

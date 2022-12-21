@@ -1,5 +1,7 @@
 export const PATHS = {
   home: '/',
+  about: '/about',
+  teams: '/teams',
   // lessons: (textSearch = null) => (textSearch ? `lesson=${textSearch}` : 'lesson=react'),
   // category: (nameLesson) => (nameLesson ? `lesson/${nameLesson}` : 'lesson/:nameLesson'),
 };
