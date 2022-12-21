@@ -1,9 +1,9 @@
 import React from 'react'
 import axios from 'axios'
 
-import { ALL_FILMS_URL } from "../urls"
+import { ALL_FILMS_URL } from "../utils/urls"
 import { Header, Series, Footer } from '../components/index'
-import { Loader } from '../ui/Loader/Loader'
+import { Loader } from '../ui/loader/Loader'
 
 class TVSeries extends React.Component {
   state = {

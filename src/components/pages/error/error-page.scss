@@ -1,0 +1,19 @@
+.error-page {
+  position: relative;
+  padding: 50px;
+  font-size: 28px;
+  color: $c-white;
+
+  &__text {
+    padding: 20px 0;
+  }
+
+  &__link {
+    padding-top: 30px;
+    color: $c-white;
+
+    &:hover {
+      text-decoration: underline;
+    }
+  }
+}

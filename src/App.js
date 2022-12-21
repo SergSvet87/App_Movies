@@ -1,20 +1,9 @@
-import React from 'react'
-import { Routes, Route } from 'react-router-dom'
+import React from 'react';
+import { RouterProvider } from 'react-router-dom';
 
-import { TVSeries, Movies, Cartoons, About } from './routes/index'
+import { router } from './router';
+import { Loader } from './components/ui/loader/Loader';
 
-class App extends React.Component {
-
-  render() {
-    return (
-      <Routes>
-        <Route path="/series" element={<TVSeries />} />
-        <Route path="/" exact element={<Movies />} />
-        <Route path="/animation" element={<Cartoons />} />
-        <Route path="/about" element={<About />} />
-      </Routes >
-    )
-  }
-}
-
-export default App;
+export const App = () => (
+  <RouterProvider router={router} fallbackElement={<Loader />}></RouterProvider>
+);

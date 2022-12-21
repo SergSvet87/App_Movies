@@ -1,7 +1,7 @@
 import React from 'react'
 import axios from 'axios'
 
-import { ALL_FILMS_URL } from "../urls"
+import { ALL_FILMS_URL } from "../utils/urls"
 import { Header, Animation, Footer } from '../components/index'
 import { Loader } from '../ui/Loader/Loader'
 
