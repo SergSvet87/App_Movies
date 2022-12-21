@@ -18,7 +18,7 @@ export const Film = ({ id, year, rating, title, summary, poster, genres }) => {
             <li className={styles.genre} key={index}>{genre}</li>
           ))}
         </ul>
-        <div className={styles.summary}>{summary.slice(0, 150)}...</div>
+        {/* <div className={styles.summary}>{summary.slice(0, 150)}...</div> */}
       </div>
     </>
   )

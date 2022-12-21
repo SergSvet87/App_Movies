@@ -2,7 +2,7 @@ import React from 'react';
 import axios from 'axios';
 
 import { ALL_FILMS_URL } from '../../../utils/urls';
-import { Films } from '../../Main/Films/Films';
+import { Films } from '../../main/films/Films';
 import { Loader } from '../../ui/loader/Loader';
 
 class HomePage extends React.Component {

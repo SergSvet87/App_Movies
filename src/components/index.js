@@ -1,6 +1,0 @@
-export { Header } from './header/Header'
-export { Films } from './Main/Films/Films'
-export { Series } from './Main/Series/Series'
-export { Animation } from './Main/Animation/Animation'
-export { AboutUs } from './Main/About/AboutUs'
-export { Footer } from './footer/Footer'
