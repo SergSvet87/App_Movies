@@ -1,18 +1,19 @@
 {
   "files": {
-    "main.css": "/App_Movies/static/css/main.7e885e18.css",
-    "main.js": "/App_Movies/static/js/main.6704ae0a.js",
+    "main.css": "/App_Movies/static/css/main.0e5b93df.css",
+    "main.js": "/App_Movies/static/js/main.0230e2ee.js",
+    "static/media/logo.png": "/App_Movies/static/media/logo.027caf46722e896e19c5.png",
     "static/media/Kurale-Regular.ttf": "/App_Movies/static/media/Kurale-Regular.9afa76c471c1bd101ba1.ttf",
     "static/media/OpenSans-Regular.ttf": "/App_Movies/static/media/OpenSans-Regular.77c09223204154ae8d43.ttf",
     "static/media/OpenSans-Bold.ttf": "/App_Movies/static/media/OpenSans-Bold.fa428cdd2e334e2be904.ttf",
-    "static/media/mainLogo.png": "/App_Movies/static/media/mainLogo.c6fbe1b8934632d26774.png",
-    "static/media/sprite-socials.svg": "/App_Movies/static/media/sprite-socials.4c78e4bbab82e681b3e0379dd5226606.svg",
+    "static/media/dubl.png": "/App_Movies/static/media/dubl.2fb91e0fe81908ffce2e.png",
+    "static/media/sprite-socials.svg": "/App_Movies/static/media/sprite-socials.0116ed5994191e0147b4407a84183610.svg",
     "index.html": "/App_Movies/index.html",
-    "main.7e885e18.css.map": "/App_Movies/static/css/main.7e885e18.css.map",
-    "main.6704ae0a.js.map": "/App_Movies/static/js/main.6704ae0a.js.map"
+    "main.0e5b93df.css.map": "/App_Movies/static/css/main.0e5b93df.css.map",
+    "main.0230e2ee.js.map": "/App_Movies/static/js/main.0230e2ee.js.map"
   },
   "entrypoints": [
-    "static/css/main.7e885e18.css",
-    "static/js/main.6704ae0a.js"
+    "static/css/main.0e5b93df.css",
+    "static/js/main.0230e2ee.js"
   ]
 }
