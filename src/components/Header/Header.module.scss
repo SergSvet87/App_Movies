@@ -36,7 +36,9 @@
 
 	.bottom {
 		height: 120px;
-		@include flex(space-between, center);
+		display: flex;
+		justify-content: space-between;
+		align-items: center;
 		background-color: $bg-header;
 		border-radius: 50px;
 		padding-right: 100px;

@@ -1,8 +1,8 @@
 import { Outlet, useNavigation } from 'react-router-dom';
 
-import { Footer } from './footer/Footer';
+import { Footer } from './Footer/Footer';
 import { Loader } from './ui/loader/Loader';
-import { Header } from './header/Header';
+import { Header } from './Header/Header';
 
 export const Layout = () => {
   const { state } = useNavigation();
