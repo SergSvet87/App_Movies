@@ -1,9 +1,9 @@
 import React from 'react';
 import axios from 'axios';
 
-import { ALL_FILMS_URL } from '../../../utils/urls';
-import { Films } from '../../Main/Films/Films';
-import { Loader } from '../../ui/loader/Loader';
+import { ALL_FILMS_URL } from '../../const';
+import { Films } from './main/films/Films';
+import { Loader } from '../../components/loader/Loader';
 
 class HomePage extends React.Component {
   state = {
@@ -32,7 +32,7 @@ class HomePage extends React.Component {
   render() {
     const { isLoading, movies } = this.state;
 
-    return <div>{isLoading ? <Loader /> : <Films movies={movies} />}</div>;
+    return <div className="container">{isLoading ? <Loader /> : <Films movies={movies} />}</div>;
   }
 }
 

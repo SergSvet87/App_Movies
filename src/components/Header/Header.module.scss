@@ -7,6 +7,7 @@
 	.top {
 		@include flex(space-between, center);
 		margin-bottom: 20px;
+		text-transform: uppercase;
 	}
 
 	.logo {
@@ -24,14 +25,6 @@
 		span {
 			color: $primary-color;
 		}		
-	}
-
-	.navTop {
-		width: 30%;
-	}
-	
-	.navBottom {
-		width: 55%;
 	}
 
 	.bottom {

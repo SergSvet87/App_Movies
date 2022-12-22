@@ -2,8 +2,8 @@ export const PATHS = {
   home: '/',
   about: '/about',
   teams: '/teams',
-  // lessons: (textSearch = null) => (textSearch ? `lesson=${textSearch}` : 'lesson=react'),
-  // category: (nameLesson) => (nameLesson ? `lesson/${nameLesson}` : 'lesson/:nameLesson'),
+  // category: (category) => (category ? `category/{category}` : 'lesson/:category'),
+  // movieId: (movieId = null) => (movieId ? `movieId/{movieId}` : 'movieId/:movieId'),
 };
 
 

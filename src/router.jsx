@@ -1,12 +1,14 @@
 import { createBrowserRouter } from 'react-router-dom';
 
-import { PATHS } from './utils/urls';
+import { PATHS } from './const';
 // import { loaderLesson } from './utils/loaderMovie';
-import { Layout } from './components/layout';
+import { Layout } from './layout';
 
-import { ErrorPage } from './components/pages/error/error-page';
-import { NotFoundPage } from './components/pages/not-found/not-found-page';
-import HomePage from './components/pages/home/HomePage';
+import { ErrorPage } from './pages/error/error-page';
+import { NotFoundPage } from './pages/not-found/not-found-page';
+import HomePage from './pages/home/HomePage';
+import { AboutPage } from './pages/about/AboutPage';
+import {TeamsPage} from './pages/teams/TeamsPage';
 
 export const router = createBrowserRouter([
   {
@@ -19,9 +21,12 @@ export const router = createBrowserRouter([
         element: <HomePage />,
       },
       {
-        // path: PATHS.lesson(),
-        // element: <CategoryPage />,
-        // loader: loaderLesson,
+        path: PATHS.about,
+        element: <AboutPage />,
+      },
+      {
+        path: PATHS.teams,
+        element: <TeamsPage />,
       },
       {
         // path: PATHS.lesson(),

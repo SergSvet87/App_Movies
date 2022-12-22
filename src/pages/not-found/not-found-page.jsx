@@ -1,8 +1,8 @@
 import React from 'react';
 import { NavLink } from 'react-router-dom';
 
-import image from '../../../assets/img/dubl.png';
-import { PATHS } from '../../../utils/urls';
+import image from '../../assets/img/dubl.png';
+import { PATHS } from '../../const';
 
 import styles from './not-found.module.scss';
 
