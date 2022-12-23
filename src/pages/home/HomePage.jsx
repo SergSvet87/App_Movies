@@ -4,36 +4,54 @@ import axios from 'axios';
 import { ALL_FILMS_URL } from '../../const';
 import { Films } from './main/films/Films';
 import { Loader } from '../../components/loader/Loader';
+import { useDispatch } from 'react-redux';
+import { useState } from 'react';
+import { useEffect } from 'react';
+import { addMovies } from '../../components/redux/movies/movieSlice';
 
-class HomePage extends React.Component {
-  state = {
-    isLoading: true,
-    movies: [],
-  };
+const HomePage = () => {
+  const [movies, setMovies] = useState({});
+  const [isLoading, setIsLoading] = useState(true);
+  const dispatch = useDispatch();
+  //   state = {
+  //     isLoading: true,
+  //     movies: [],
+  //   };
 
-  getMovies = async () => {
+  const getMovies = async () => {
     const {
       data: {
         data: { movies },
       },
     } = await axios.get(ALL_FILMS_URL);
-    this.setState({ movies, isLoading: false });
+    // this.setState({ movies, isLoading: false });
+    setMovies({ movies });
+    dispatch(addMovies(movies));
+    setIsLoading(false);
   };
 
-  componentDidMount() {
-    this.getMovies();
-  }
+  //   componentDidMount() {
+  //     this.getMovies();
+  //   }
 
-  onSubmitHandler = (e) => {
-    e.preventDefault();
-    // setTextSearch('')
-  };
+  useEffect(() => {
+    getMovies();
+  }, []);
 
-  render() {
-    const { isLoading, movies } = this.state;
+  //   onSubmitHandler = (e) => {
+  // e.preventDefault();
+  // setTextSearch('')
+  //   };
 
-    return <div className="container">{isLoading ? <Loader /> : <Films movies={movies} />}</div>;
-  }
-}
+  //   render() {
+  // const { isLoading, movies } = this.state;
+
+  return (
+    <div className="container">
+      {isLoading ? <Loader /> : <Films movies={movies.movies} />}
+    </div>
+  );
+  //   }
+};
 
 export default HomePage;

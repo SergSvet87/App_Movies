@@ -8,7 +8,7 @@ import { ErrorPage } from './pages/error/error-page';
 import { NotFoundPage } from './pages/not-found/not-found-page';
 import HomePage from './pages/home/HomePage';
 import { AboutPage } from './pages/about/AboutPage';
-import {TeamsPage} from './pages/teams/TeamsPage';
+import { TeamsPage } from './pages/teams/TeamsPage';
 
 export const router = createBrowserRouter([
   {
