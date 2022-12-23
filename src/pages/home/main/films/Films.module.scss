@@ -1,6 +1,11 @@
 @import '../../../../scss/style.scss';
 
+.MuiPagination-ul.css-wjh20t-MuiPagination-ul a {
+  color: $white-color;
+}
+
 .films {
+  width: 75%;
   @include flex(space-between, flex-top);
 
   .film {
@@ -24,9 +29,10 @@
       position: absolute;
       top: 20px;
       left: 30px;
-      background-color: $tabs-color;
       padding: 3px;
-      font-size: 12px;
+      background-color: $tabs-color;
+      color: $primary-color;
+      font-size: 14px;
       border-radius: 15px;
     }
 
@@ -35,8 +41,9 @@
       position: absolute;
       bottom: 20px;
       right: 20px;
-      background-color: $tabs-color;
       padding: 3px;
+      background-color: $tabs-color;
+      color: $primary-color;
       font-size: 18px;
       border-radius: 15px;
     }
@@ -57,6 +64,7 @@
       .genre {
         font-weight: bold;
         font-size: 14px;
+        color: $primary-color;
         margin: 0 10px 10px;
       }
     }
