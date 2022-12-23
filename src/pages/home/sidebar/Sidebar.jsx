@@ -1,25 +1,28 @@
-import styles from './Sidebar.module.scss'
+import { useSelector } from 'react-redux';
 
-const menu = ['Popular', 'TV Shows', 'Films', 'My list']
+import { getAllMovies } from '../../../redux/movies/movieSlice';
+import { Film } from '../main/films/Film';
 
-const Sidebar = ({ isSidebarShow, setIsSidebarShow }) => {
+import styles from './Sidebar.module.scss';
+
+export const Sidebar = () => {
+  const popularMoviesFromRedux = useSelector(getAllMovies);
+
   return (
-    <div
-      className={styles.sidebar}
-      style={{ width: isSidebarShow ? '15%' : '10%' }}
-    >
-      <button onClick={() => setIsSidebarShow(!isSidebarShow)}>
-        <i className={`bx bx-${isSidebarShow ? 'x' : 'border-left'}`}></i>
-      </button>
-      <ul className={isSidebarShow ? styles.show : ''}>
-        {menu.map((title) => (
-          <li key={title}>
-            <a href={title}>{title}</a>
-          </li>
-        ))}
-      </ul>
-    </div>
-  )
-}
-
-export default Sidebar
+    <ul className={styles.sidebar}>
+      {popularMoviesFromRedux.movies.map((movie) => (
+        <li className={styles.film} key={movie.id}>
+          <Film
+            id={movie.id}
+            year={movie.year}
+            rating={movie.rating}
+            title={movie.title}
+            summary={movie.summary}
+            poster={movie.medium_cover_image}
+            genres={movie.genres}
+          />
+        </li>
+      ))}
+    </ul>
+  );
+};
