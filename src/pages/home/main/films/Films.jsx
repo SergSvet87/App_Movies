@@ -1,11 +1,17 @@
 import React from 'react';
+import { useSelector } from 'react-redux';
+import { getAllMovies } from '../../../../components/redux/movies/movieSlice';
 
 import { Film } from './Film';
 
 import styles from './Films.module.scss';
 
 export const Films = ({ movies }) => {
-  const films = movies.filter(
+  const moviesFromRedux = useSelector(getAllMovies);
+
+  // console.log('moviesFromRedux', moviesFromRedux);
+
+  const films = moviesFromRedux.filter(
     (film) => film.summary !== '' && film.medium_cover_image !== '404'
   );
 
