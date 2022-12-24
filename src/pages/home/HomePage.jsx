@@ -4,7 +4,6 @@ import { useDispatch } from 'react-redux';
 import { Link as NavLink } from 'react-router-dom';
 import { Pagination, PaginationItem, Stack } from '@mui/material';
 
-import { BASE_URL } from '../../const';
 import { ALL_FILMS_URL } from '../../const';
 import { POPULAR_FILMS_URL } from '../../const';
 import { Films } from './main/films/Films';
@@ -23,12 +22,12 @@ const HomePage = (props) => {
   const [pageQty, setPageQty] = useState(10);
 
   useEffect(() => {
-    axios.get(BASE_URL + `page=${page}`).then(({ data }) => {
+    axios.get(ALL_FILMS_URL + `page=${page}`).then(({ data }) => {
       setPageQty(data.nbPages);
 
       if (data.nbPages < page) {
         setPage(1);
-        props.history.replace('/');
+        props.history.replace('&');
       }
     });
   }, [page, props.history]);
@@ -67,7 +66,7 @@ const HomePage = (props) => {
         {/* {pageQty && ( */}
         <Pagination
           color="primary"
-          count={pageQty}
+          count="10"
           page={page}
           onChange={(_, num) => setPage(num)}
           showFirstButton
@@ -75,8 +74,9 @@ const HomePage = (props) => {
           sx={{ marginY: 3, marginX: 'auto' }}
           renderItem={(item) => (
             <PaginationItem
+              color="primary"
               component={NavLink}
-              to={`/?page=${item.page}`}
+              to={`&page=${item.page}`}
               {...item}
             />
           )}
