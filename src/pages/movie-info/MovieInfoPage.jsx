@@ -3,7 +3,7 @@ import axios from 'axios';
 import { useDispatch } from 'react-redux';
 
 import { ALL_FILMS_URL } from '../../const';
-import { Film } from './Film';
+import { FilmDetails } from './FilmDetails';
 import { Loader } from '../../components/loader/Loader';
 import { addMovies } from '../../redux/movies/movieSlice';
 
@@ -27,7 +27,7 @@ export const MovieInfoPage = () => {
 
   return (
     <div className="container">
-      {isLoading ? <Loader /> : <Film movie={movies.movies} />}
+      {isLoading ? <Loader /> : <FilmDetails movie={movies.movies} />}
     </div>
   );
 };

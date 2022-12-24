@@ -3,7 +3,7 @@ import PropTypes from 'prop-types'
 
 import styles from './MovieInfo.scss'
 
-export const Film = ({ movie }) => {
+export const FilmDetails = ({ movie }) => {
   return (
     <div className={styles.info} style={{background:movie.background_image_original}}>
       <div className={styles.poster}>
@@ -23,7 +23,7 @@ export const Film = ({ movie }) => {
   )
 }
 
-Film.propTypes = {
+FilmDetails.propTypes = {
   id: PropTypes.number.isRequired,
   year: PropTypes.number.isRequired,
   rating: PropTypes.number.isRequired,
