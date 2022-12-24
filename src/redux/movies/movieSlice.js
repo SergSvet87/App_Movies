@@ -12,9 +12,9 @@ const movieSlice = createSlice({
     addMovies: (state, { payload }) => {
       state.movies = payload;
     },
-    addPopularMovies: (state, { payload }) => {
-      state.popularMovies = payload;
-    },
+    // addPopularMovies: (state, { payload }) => {
+    //   state.popularMovies = payload;
+    // },
   },
 });
 

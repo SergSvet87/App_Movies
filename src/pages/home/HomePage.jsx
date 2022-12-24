@@ -10,10 +10,12 @@ import { POPULAR_FILMS_URL } from '../../const';
 import { Films } from './main/films/Films';
 import { Loader } from '../../components/loader/Loader';
 import { addMovies } from '../../redux/movies/movieSlice';
+import { addPopularMovies } from '../../redux/movies/movieSlice';
 import { Sidebar } from './sidebar/Sidebar';
 
 const HomePage = (props) => {
   const [movies, setMovies] = useState({});
+  const [popularMovies, setPopularMovies] = useState({});
   const [isLoading, setIsLoading] = useState(true);
   const dispatch = useDispatch();
 
@@ -44,10 +46,11 @@ const HomePage = (props) => {
     const {
       data: { data },
     } = await axios.get(POPULAR_FILMS_URL);
-    setMovies({ movies });
-    dispatch(addMovies(data));
+    setPopularMovies({ popularMovies });
+    dispatch(addPopularMovies(data));
     setIsLoading(false);
   };
+  console.log(popularMovies);
 
   useEffect(() => {
     getMovies();

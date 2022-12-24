@@ -9,6 +9,7 @@ import { NotFoundPage } from './pages/not-found/not-found-page';
 import HomePage from './pages/home/HomePage';
 import { AboutPage } from './pages/about/AboutPage';
 import { TeamsPage } from './pages/teams/TeamsPage';
+import { MovieInfoPage } from './pages/movie-info/MovieInfoPage';
 
 export const router = createBrowserRouter([
   {
@@ -29,9 +30,14 @@ export const router = createBrowserRouter([
         element: <TeamsPage />,
       },
       {
-        // path: PATHS.lesson(),
-        // element: <MovieInfoPage />,
-        // loader: loaderLesson,
+        path: PATHS.movie,
+        element: <MovieInfoPage />,
+        // loader: loaderMovieInfo,
+      },
+      {
+        // path: PATHS.genre(),
+        // element: <MoviesByGenrePage />,
+        // loader: loaderMovieByGenre,
       },
       {
         path: '*',
