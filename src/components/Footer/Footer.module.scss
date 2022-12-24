@@ -5,10 +5,11 @@
   padding-top: 50px;
   padding-bottom: 50px;
   @include flex(space-between, center);
+  background: $bg-header;
 }
 
 .container {
-  @include flex(space-between, center);
+  @include flex(center, center);
 }
 
 .social {
@@ -51,10 +52,11 @@
 }
 
 .copyright {
-  width: 60%;
+  // width: 60%;
   color: $gray-color;
   @include flex(center, center);
   line-height: 1.7;
+  text-align: center;
 
   i {
     padding: 0 5px;

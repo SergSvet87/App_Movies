@@ -17,8 +17,6 @@ export const Films = () => {
       film.rating !== 0
   );
 
-  console.log(navigate);
-
   return (
     <>
       <ul className={styles.films}>

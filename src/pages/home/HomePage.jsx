@@ -6,11 +6,12 @@ import { Pagination, PaginationItem, Stack } from '@mui/material';
 
 import { ALL_FILMS_URL } from '../../const';
 import { POPULAR_FILMS_URL } from '../../const';
-import { Films } from './main/films/Films';
 import { Loader } from '../../components/loader/Loader';
 import { addMovies } from '../../redux/movies/movieSlice';
 import { addPopularMovies } from '../../redux/movies/movieSlice';
+import { Films } from './main/films/Films';
 import { Sidebar } from './sidebar/Sidebar';
+import HomePage1 from './HomePage1';
 
 const HomePage = (props) => {
   const [movies, setMovies] = useState({});
@@ -45,11 +46,10 @@ const HomePage = (props) => {
     const {
       data: { data },
     } = await axios.get(POPULAR_FILMS_URL);
-    setPopularMovies({ popularMovies });
-    dispatch(addPopularMovies(data));
+    setPopularMovies({ movies });
+    dispatch(addMovies(data));
     setIsLoading(false);
   };
-  console.log(popularMovies);
 
   useEffect(() => {
     getMovies();
@@ -60,7 +60,7 @@ const HomePage = (props) => {
     <div className="container">
       <div style={{ display: 'flex', paddingTop: '50px' }}>
         {isLoading ? <Loader /> : <Films movies={movies.movies} />}
-        {isLoading ? <Loader /> : <Sidebar movies={movies.movies} />}
+        {isLoading ? <Loader /> : <Sidebar popularMovies={movies.movies} />}
       </div>
       <Stack spacing={2}>
         {/* {pageQty && ( */}

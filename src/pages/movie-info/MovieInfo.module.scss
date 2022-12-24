@@ -1,0 +1,167 @@
+@import '../../scss/style.scss';
+
+.info {
+  position: relative;
+  margin: 50px 0;
+
+  &::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(180deg, #000000 0%, rgba(0, 0, 0, 0.7) 100%);
+    z-index: -1;
+  }
+
+  h5 {
+    width: 150px;
+    display: inline-block;
+    font-size: 18px;
+    padding: 25px;
+  }
+
+  ul {
+    max-width: 450px;
+    display: inline-flex;
+    flex-wrap: wrap;
+  }
+
+  .titleLong {
+    font-family: $ff-kurale;
+    font-size: 42px;
+    padding: 30px 0 10px 100px;
+  }
+
+  .titleEng {
+    font-family: $ff-kurale;
+    font-style: italic;
+    font-size: 28px;
+    padding-left: 100px;
+    margin-bottom: 50px;
+    color: $primary-color;
+  }
+
+  .description {
+    @include flex(flex-start, flex-start);
+    padding: 0 25px;
+    font-size: 20px;
+    margin-bottom: 20px;
+  }
+
+  .image {
+    margin-right: 100px;
+    position: relative;
+
+    img {
+      width: 100%;
+      transition: all 3s;
+    }
+
+    .play {
+      display: none;
+      position: absolute;
+      top: calc(50% - 50px);
+      left: calc(50% - 50px);
+      z-index: 5;
+
+      button {
+        border-radius: 50%;
+        transition: all 4s;
+
+        &:hover {        
+          cursor: pointer;
+        }
+      }
+      
+    }
+
+    &:hover {
+      
+      &::after {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: linear-gradient(180deg, #000000 0%, rgba(0, 0, 0, 0.7) 100%);
+        z-index: 2;
+      }
+
+      .play {
+        display: block;
+        transition: all 4s;
+      }
+    }
+  }
+
+  .definition {
+    padding-top: 50px;
+  }
+
+  .rating {
+    border: 1px solid $white-opacity;
+    border-radius: 15px;
+    margin-bottom: 20px;
+
+    span {
+      color: $primary-color;
+    }
+  }
+
+  .year {
+    background: $tabs-opacity;
+    border-radius: 15px;
+    margin-bottom: 20px;
+  }
+
+  .genres {
+    border: 1px solid $white-opacity;
+    border-radius: 15px;
+    margin-bottom: 20px;
+
+    li {
+      margin-right: 15px;
+    }
+  }
+
+  .actors {
+    background: $tabs-opacity;
+    border-radius: 15px;
+
+    ul {
+      padding: 10px 0;
+
+      li {
+        margin-right: 25px;
+        margin-bottom: 10px;
+      }
+    }
+  }
+
+  .screen {
+    margin-bottom: 100px;
+
+    h5 {
+      display: block;
+      font-size: 26px;
+    }
+
+    ul {
+      max-width: 100%;
+      @include flex(space-around, center);
+
+      li {
+        display: inline-block;
+      }
+    }
+  }
+
+  .text {
+    padding: 0 20px 80px;
+    font-size: 20px;
+    line-height: 1.6;
+  }
+}

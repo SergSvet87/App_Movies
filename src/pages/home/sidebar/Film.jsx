@@ -1,5 +1,8 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import { NavLink } from 'react-router-dom';
+
+import { PATHS } from '../../../const';
 
 import styles from './Sidebar.module.scss';
 
@@ -12,7 +15,9 @@ export const Film = ({ id, year, rating, title, summary, poster, genres }) => {
         <p className={styles.year}>{year}</p>
       </div>
       <div className={styles.text}>
-        <h3 className={styles.title}>{title}</h3>
+        <NavLink to={PATHS.movie}>
+          <h3 className={styles.title}>{title}</h3>
+        </NavLink>
         <ul className={styles.genres}>
           {genres.map((genre, index) => (
             <li className={styles.genre} key={index}>

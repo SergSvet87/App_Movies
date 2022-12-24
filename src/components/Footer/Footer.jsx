@@ -86,7 +86,7 @@ export const Footer = () => {
               href="https://github.com/SergSvet87/App_Movies.git"
               target="_blank"
               rel="noreferrer">
-              Ukraine, Kharkiv
+              Ukraine
             </a>
           </address>
         </div>

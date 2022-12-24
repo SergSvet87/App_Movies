@@ -1,31 +1,29 @@
 import React from 'react';
 import axios from 'axios';
 
-import { ALL_FILMS_URL } from '../../const';
-import { Films } from './main/films/Films';
+import { INFO_FILM_URL } from '../../const';
+// import { Film } from './sidebar/Film';
+import { FilmDetails } from '../movie-info/FilmDetails';
 import { Loader } from '../../components/loader/Loader';
-import { useDispatch } from 'react-redux';
 
-const dispatch = useDispatch();
-class HomePage extends React.Component {
+// import styles from './sidebar/Sidebar.module.scss';
+
+// const dispatch = useDispatch();
+class HomePage1 extends React.Component {
   state = {
     isLoading: true,
-    movies: [],
+    movie: {},
   };
 
-  getMovies = async () => {
+  getMovie = async () => {
     const {
-      data: {
-        data: { movies },
-      },
-    } = await axios.get(ALL_FILMS_URL);
-    this.setState({ movies, isLoading: false });
-
-    console.log(movies);
+      data: { data },
+    } = await axios.get(INFO_FILM_URL);
+    this.setState({ data, isLoading: false });
   };
 
   componentDidMount() {
-    this.getMovies();
+    this.getMovie();
   }
 
   onSubmitHandler = (e) => {
@@ -34,14 +32,14 @@ class HomePage extends React.Component {
   };
 
   render() {
-    const { isLoading, movies } = this.state;
+    const { isLoading, data } = this.state;
 
     return (
       <div className="container">
-        {isLoading ? <Loader /> : <Films movies={movies} />}
+        {isLoading ? <Loader /> : <FilmDetails movie={data.movie} />}
       </div>
     );
   }
 }
 
-export default HomePage;
+export default HomePage1;

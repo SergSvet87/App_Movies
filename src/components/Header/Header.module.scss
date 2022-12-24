@@ -1,7 +1,7 @@
 @import '../../scss/style.scss';
 
 .header {
-	padding: 20px 40px;
+	padding: 15px 10px;
 
 	.top {
 		@include flex(space-between, center);
@@ -27,7 +27,7 @@
 	}
 
 	.bottom {
-		height: 120px;
+		height: 75px;
 		display: flex;
 		justify-content: space-between;
 		align-items: center;
