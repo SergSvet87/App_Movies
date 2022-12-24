@@ -11,7 +11,7 @@ export const Sidebar = () => {
   const popularMoviesFromRedux = useSelector(getAllMovies);
 
   const films = popularMoviesFromRedux.movies.filter(
-    (film) => film.summary !== '' && film.medium_cover_image !== '404'
+    (film) => film.summary !== '' && film.medium_cover_image !== '404' && film.rating !== 0
   );
 
   return (
@@ -21,10 +21,12 @@ export const Sidebar = () => {
           <NavLink to={PATHS.popular}>
             <Film
               id={movie.id}
+              rating={movie.rating}
               year={movie.year}
               title={movie.title}
               poster={movie.medium_cover_image}
               genres={movie.genres}
+              summary={movie.summary}
             />
           </NavLink>
         </li>

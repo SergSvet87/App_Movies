@@ -8,10 +8,13 @@ import styles from './Films.module.scss';
 
 export const Films = () => {
   const moviesFromRedux = useSelector(getAllMovies);
-  const navigate = useNavigate()
+  const navigate = useNavigate();
 
   const films = moviesFromRedux.movies.filter(
-    (film) => film.summary !== '' && film.medium_cover_image !== '404'
+    (film) =>
+      film.summary !== '' &&
+      film.medium_cover_image !== '404' &&
+      film.rating !== 0
   );
 
   console.log(navigate);

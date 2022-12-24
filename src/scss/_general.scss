@@ -89,3 +89,8 @@ svg {
   line-height: 1.17;
   text-align: center;
 }
+
+.MuiPagination-ul div,
+.MuiPagination-ul a {
+  color: $white-color;
+}

@@ -65,7 +65,7 @@ export const Footer = () => {
   return (
     <footer className={styles.footer}>
       <div className={`container ${styles.container}`}>
-        <ul className={styles.social}>
+        {/* <ul className={styles.social}>
           {icons.map((icon) => (
             <li className={styles.socialItem} key={icon._id}>
               <a
@@ -76,16 +76,16 @@ export const Footer = () => {
               </a>
             </li>
           ))}
-        </ul>
-        
+        </ul> */}
+
         <div className={styles.copyright}>
-          &copy; Copyright {new Date().getFullYear()} All rights reserved | This
-          template is made with <i className="bx bxs-heart"></i> in
+          &copy; Copyright {new Date().getFullYear()}. All rights reserved |
+          This template is made with <i className="bx bxs-heart"></i> in
           <address className="footer__address">
             <a
-              href="https://sergsvet87.github.io/My_Portfolio/"
-              // target="_blank"
-            >
+              href="https://github.com/SergSvet87/App_Movies.git"
+              target="_blank"
+              rel="noreferrer">
               Ukraine, Kharkiv
             </a>
           </address>

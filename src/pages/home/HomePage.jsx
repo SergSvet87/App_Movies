@@ -1,7 +1,7 @@
 import { useState, useEffect } from 'react';
 import axios from 'axios';
 import { useDispatch } from 'react-redux';
-import { Link as NavLink } from 'react-router-dom';
+import { Link, NavLink } from 'react-router-dom';
 import { Pagination, PaginationItem, Stack } from '@mui/material';
 
 import { ALL_FILMS_URL } from '../../const';
@@ -58,7 +58,7 @@ const HomePage = (props) => {
 
   return (
     <div className="container">
-      <div style={{ display: 'flex' }}>
+      <div style={{ display: 'flex', paddingTop: '50px' }}>
         {isLoading ? <Loader /> : <Films movies={movies.movies} />}
         {isLoading ? <Loader /> : <Sidebar movies={movies.movies} />}
       </div>
@@ -71,11 +71,12 @@ const HomePage = (props) => {
           onChange={(_, num) => setPage(num)}
           showFirstButton
           showLastButton
+          size="large"
           sx={{ marginY: 3, marginX: 'auto' }}
           renderItem={(item) => (
             <PaginationItem
               color="primary"
-              component={NavLink}
+              component={Link}
               to={`&page=${item.page}`}
               {...item}
             />
