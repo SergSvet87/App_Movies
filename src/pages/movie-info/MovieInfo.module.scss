@@ -47,7 +47,7 @@
     @include flex(flex-start, flex-start);
     padding: 0 25px;
     font-size: 20px;
-    margin-bottom: 20px;
+    margin-bottom: 40px;
   }
 
   .image {
@@ -124,6 +124,7 @@
 
     li {
       margin-right: 15px;
+      margin-bottom: 10px;
     }
   }
 
@@ -142,7 +143,7 @@
   }
 
   .screen {
-    margin-bottom: 100px;
+    margin-bottom: 40px;
 
     h5 {
       display: block;
@@ -163,5 +164,10 @@
     padding: 0 20px 80px;
     font-size: 20px;
     line-height: 1.6;
+
+    h5 {
+      display: block;
+      font-size: 26px;
+    }
   }
 }

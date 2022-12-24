@@ -3,6 +3,7 @@ import PropTypes from 'prop-types';
 
 import btnPlay from '../../assets/img/btn-play.png';
 import styles from './MovieInfo.module.scss';
+import axios from 'axios';
 
 export const FilmDetails = ({ movie }) => {
   const screenshots = [
@@ -26,20 +27,20 @@ export const FilmDetails = ({ movie }) => {
             height={480}
           />
           <div className={styles.play}>
-            <button>
-              <img src={btnPlay} alt="Play" height={100} />
-            </button>
+            <a href={movie.torrents[0].url} download={`${movie.title_long}.torrent`}>
+              <img src={btnPlay} alt="Play" height={100} title={`Download ${movie.title_long}`} />
+            </a>
           </div>
         </div>
         <div className={styles.definition}>
-          <p className={styles.rating}>
+          <div className={styles.rating}>
             <h5>Rating:</h5>
             <span>{movie.rating}</span> / 10
-          </p>
-          <p className={styles.year}>
+          </div>
+          <div className={styles.year}>
             <h5>Year:</h5>
             <span>{movie.year}</span>
-          </p>
+          </div>
           <div className={styles.genres}>
             <h5>Genre:</h5>
             <ul>
@@ -53,7 +54,7 @@ export const FilmDetails = ({ movie }) => {
 
           {movie.cast ? (
             <div className={styles.actors}>
-              <h5>Actors:</h5>
+              <h5>Top Cast:</h5>
               <ul>
                 {movie.cast.map((actor, index) => (
                   <li className={styles.actor} key={index}>
@@ -84,6 +85,7 @@ export const FilmDetails = ({ movie }) => {
       )}
 
       <div className={styles.text}>
+        <h5>Description:</h5>
         {movie.description_full ? (
           <div className={styles.summary}>{movie.description_full}</div>
         ) : (
@@ -92,14 +94,4 @@ export const FilmDetails = ({ movie }) => {
       </div>
     </div>
   );
-};
-
-FilmDetails.propTypes = {
-  id: PropTypes.number.isRequired,
-  year: PropTypes.number.isRequired,
-  rating: PropTypes.number.isRequired,
-  title: PropTypes.string.isRequired,
-  summary: PropTypes.string.isRequired,
-  poster: PropTypes.string.isRequired,
-  genres: PropTypes.arrayOf(PropTypes.string).isRequired,
 };
