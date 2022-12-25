@@ -10,7 +10,7 @@ import { Navigation } from './navigation/Navigation';
 import styles from './Header.module.scss';
 
 export const Header = ({ onSubmitHandler }) => {
-  const films = ['home', 'about', 'teams'];
+  const films = ['home', 'about', 'team'];
 
   const genres = [
     'Action',

@@ -1,7 +1,7 @@
 export const PATHS = {
   home: '/',
   about: '/about',
-  teams: '/teams',
+  team: '/team',
   movie: '/movie',
   genre: (genre) => (genre ? `genre=${genre}` : 'genre=:genre'),
   movieId: (id = null) => (id ? `movieId=${id}` : 'movieId=:movieId'),

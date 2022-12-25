@@ -8,7 +8,7 @@ import { ErrorPage } from './pages/error/error-page';
 import { NotFoundPage } from './pages/not-found/not-found-page';
 import HomePage from './pages/home/HomePage';
 import { AboutPage } from './pages/about/AboutPage';
-import { TeamsPage } from './pages/teams/TeamsPage';
+import { TeamPage } from './pages/team/TeamPage';
 import { MovieInfoPage } from './pages/movie-info/MovieInfoPage';
 import HomePage1 from './pages/home/HomePage1';
 
@@ -27,8 +27,8 @@ export const router = createBrowserRouter([
         element: <AboutPage />,
       },
       {
-        path: PATHS.teams,
-        element: <TeamsPage />,
+        path: PATHS.team,
+        element: <TeamPage />,
       },
       {
         path: PATHS.movie,

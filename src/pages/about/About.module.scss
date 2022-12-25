@@ -1,0 +1,48 @@
+@import '../../scss/style.scss';
+
+.about {
+  max-width : 960px;
+  margin    : 0 auto;
+  padding   : 50px 0;
+  font-size : 20px;
+  text-align: center;
+
+  h1 {
+    @include flex(center, center);
+    margin-bottom: 25px;
+
+    &::before,
+    &::after {
+      content      : "";
+      margin-right : 20px;
+      width        : 165px;
+      border-bottom: 1px solid $primary-color;
+    }
+
+    &::after {
+      margin-left: 20px;
+    }
+  }
+
+  h2 {
+    font-size    : 46px;
+    margin-bottom: 20px;
+  }
+
+  p {
+    margin-bottom: 50px;
+
+    a {
+      display: inline-flex;
+      color  : #6AC045;
+
+      &:hover {
+        color: darken($color: #6AC045, $amount: 15%);
+      }
+    }
+  }
+
+  .link {
+    padding: 50px 0;
+  }
+}

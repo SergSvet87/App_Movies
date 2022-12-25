@@ -1,9 +1,7 @@
 import React from 'react';
-import PropTypes from 'prop-types';
 
 import btnPlay from '../../assets/img/btn-play.png';
 import styles from './MovieInfo.module.scss';
-import axios from 'axios';
 
 export const FilmDetails = ({ movie }) => {
   const screenshots = [

@@ -1,0 +1,24 @@
+@import '../../scss/style.scss';
+
+.team {
+  padding: 50px 0;
+  text-align: center;
+  margin: 0 auto;
+
+  h1 {
+    @include flex(center, center);
+    margin-bottom: 25px;
+
+    &::before,
+    &::after {
+      content      : "";
+      margin-right : 20px;
+      width        : 165px;
+      border-bottom: 1px solid $primary-color;
+    }
+
+    &::after {
+      margin-left: 20px;
+    }
+  }
+}
