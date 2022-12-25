@@ -12,66 +12,72 @@ export const FilmDetails = ({ movie }) => {
   ];
 
   return (
-    <div
-      className={styles.info}
-      style={{ background: `${movie.background_image_original}` }}>
-      <h3 className={styles.titleLong}>{movie.title_long}</h3>
-      <h4 className={styles.titleEng}>{movie.title_english}</h4>
-      <div className={styles.description}>
-        <div className={styles.image}>
-          <img
-            src={movie.large_cover_image}
-            alt={movie.title}
-            title={movie.title}
-            height={480}
-          />
-          <div className={styles.play}>
-            <a
-              href={movie.torrents[0].url}
-              download={`${movie.title_long}.torrent`}>
+    <div className={styles.info}>
+      <div
+        className={styles.header}
+        style={{
+          background: `url(${movie.background_image_original}) 100% 100% / cover no-repeat`,
+        }}>
+        <div className={styles.view}>
+          <h3 className={styles.titleLong}>{movie.title_long}</h3>
+          <h4 className={styles.titleEng}>{movie.title_english}</h4>
+          <div className={styles.description}>
+            <div className={styles.image}>
               <img
-                src={btnPlay}
-                alt="Play"
-                height={100}
-                title={`Download ${movie.title_long}`}
+                src={movie.large_cover_image}
+                alt={movie.title}
+                title={movie.title}
+                height={480}
               />
-            </a>
-          </div>
-        </div>
-        <div className={styles.definition}>
-          <div className={styles.rating}>
-            <h5>Rating:</h5>
-            <span>{movie.rating}</span> / 10
-          </div>
-          <div className={styles.year}>
-            <h5>Year:</h5>
-            <span>{movie.year}</span>
-          </div>
-          <div className={styles.genres}>
-            <h5>Genre:</h5>
-            <ul>
-              {movie.genres.map((genre, index) => (
-                <li className={styles.genre} key={index}>
-                  {genre}
-                </li>
-              ))}
-            </ul>
-          </div>
-
-          {movie.cast ? (
-            <div className={styles.actors}>
-              <h5>Top Cast:</h5>
-              <ul>
-                {movie.cast.map((actor, index) => (
-                  <li className={styles.actor} key={index}>
-                    {actor.name}
-                  </li>
-                ))}
-              </ul>
+              <div className={styles.play}>
+                <a
+                  href={movie.torrents[0].url}
+                  download={`${movie.title_long}.torrent`}>
+                  <img
+                    src={btnPlay}
+                    alt="Play"
+                    height={100}
+                    title={`Download ${movie.title_long}`}
+                  />
+                </a>
+              </div>
             </div>
-          ) : (
-            ''
-          )}
+            <div className={styles.definition}>
+              <div className={styles.rating}>
+                <h5>Rating:</h5>
+                <span>{movie.rating}</span> / 10
+              </div>
+              <div className={styles.year}>
+                <h5>Year:</h5>
+                <span>{movie.year}</span>
+              </div>
+              <div className={styles.genres}>
+                <h5>Genre:</h5>
+                <ul>
+                  {movie.genres.map((genre, index) => (
+                    <li className={styles.genre} key={index}>
+                      {genre}
+                    </li>
+                  ))}
+                </ul>
+              </div>
+
+              {movie.cast ? (
+                <div className={styles.actors}>
+                  <h5>Top Cast:</h5>
+                  <ul>
+                    {movie.cast.map((actor, index) => (
+                      <li className={styles.actor} key={index}>
+                        {actor.name}
+                      </li>
+                    ))}
+                  </ul>
+                </div>
+              ) : (
+                ''
+              )}
+            </div>
+          </div>
         </div>
       </div>
 

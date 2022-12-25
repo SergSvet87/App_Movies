@@ -2,96 +2,106 @@
 
 .info {
   position: relative;
-  margin: 50px 0;
+  margin  : 50px 0;
 
-  &::after {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background: linear-gradient(180deg, #000000 0%, rgba(0, 0, 0, 0.7) 100%);
-    z-index: -1;
+  .header {
+    position      : relative;
+    padding-bottom: 20px;
+
+    &::after {
+      content   : '';
+      position  : absolute;
+      top       : 0;
+      left      : 0;
+      width     : 100%;
+      height    : 100%;
+      background: linear-gradient(180deg, #000000 0%, rgba(0, 0, 0, 0.6) 100%);
+      z-index   : 1;
+    }
+  }
+
+  .view {
+    position: relative;
+    z-index : 2;
   }
 
   h5 {
-    width: 150px;
-    display: inline-block;
+    width    : 150px;
+    display  : inline-block;
     font-size: 18px;
-    padding: 25px;
+    padding  : 25px;
   }
 
   ul {
     max-width: 450px;
-    display: inline-flex;
+    display  : inline-flex;
     flex-wrap: wrap;
   }
 
   .titleLong {
     font-family: $ff-kurale;
-    font-size: 42px;
-    padding: 30px 0 10px 100px;
+    font-size  : 42px;
+    padding    : 30px 0 10px 100px;
   }
 
   .titleEng {
-    font-family: $ff-kurale;
-    font-style: italic;
-    font-size: 28px;
-    padding-left: 100px;
+    font-family  : $ff-kurale;
+    font-style   : italic;
+    font-size    : 28px;
+    padding-left : 100px;
     margin-bottom: 50px;
-    color: $primary-color;
+    color        : $primary-color;
   }
 
   .description {
     @include flex(flex-start, flex-start);
-    padding: 0 25px;
-    font-size: 20px;
+    padding      : 0 25px;
+    font-size    : 20px;
     margin-bottom: 40px;
   }
 
   .image {
     margin-right: 100px;
-    position: relative;
+    position    : relative;
 
     img {
-      width: 100%;
+      width     : 100%;
       transition: all 3s;
     }
 
     .play {
-      display: none;
+      display : none;
       position: absolute;
-      top: calc(50% - 50px);
-      left: calc(50% - 50px);
-      z-index: 5;
+      top     : calc(50% - 50px);
+      left    : calc(50% - 50px);
+      z-index : 5;
 
       button {
         border-radius: 50%;
-        transition: all 4s;
+        transition   : all 4s;
 
-        &:hover {        
+        &:hover {
           cursor: pointer;
         }
       }
-      
+
     }
 
     &:hover {
-      
+
       &::after {
-        content: '';
-        position: absolute;
-        top: 0;
-        left: 0;
-        width: 100%;
-        height: 100%;
+        content   : '';
+        position  : absolute;
+        top       : 0;
+        left      : 0;
+        width     : 100%;
+        height    : 100%;
         background: linear-gradient(180deg, #000000 0%, rgba(0, 0, 0, 0.7) 100%);
-        z-index: 2;
+        z-index   : 2;
       }
 
       .play {
-        display: block;
+        display   : block;
         transition: all 4s;
       }
     }
@@ -102,7 +112,7 @@
   }
 
   .rating {
-    border: 1px solid $white-opacity;
+    border       : 1px solid $white-opacity;
     border-radius: 15px;
     margin-bottom: 20px;
 
@@ -112,31 +122,31 @@
   }
 
   .year {
-    background: $tabs-opacity;
+    border       : 1px solid $white-opacity;
     border-radius: 15px;
     margin-bottom: 20px;
   }
 
   .genres {
-    border: 1px solid $white-opacity;
+    border       : 1px solid $white-opacity;
     border-radius: 15px;
     margin-bottom: 20px;
 
     li {
-      margin-right: 15px;
+      margin-right : 15px;
       margin-bottom: 10px;
     }
   }
 
   .actors {
-    background: $tabs-opacity;
+    border       : 1px solid $white-opacity;
     border-radius: 15px;
 
     ul {
       padding: 10px 0;
 
       li {
-        margin-right: 25px;
+        margin-right : 25px;
         margin-bottom: 10px;
       }
     }
@@ -146,7 +156,7 @@
     margin-bottom: 40px;
 
     h5 {
-      display: block;
+      display  : block;
       font-size: 26px;
     }
 
@@ -161,13 +171,17 @@
   }
 
   .text {
-    padding: 0 20px 80px;
-    font-size: 20px;
+    padding    : 0 0 80px;
+    font-size  : 20px;
     line-height: 1.6;
 
     h5 {
-      display: block;
+      display  : block;
       font-size: 26px;
     }
+  }
+
+  .summary {
+    padding: 0 20px;
   }
 }
