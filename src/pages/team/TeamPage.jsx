@@ -18,6 +18,7 @@ export const TeamPage = () => {
           {TEAM.map((person) => (
             <li class={styles.item} key={person.id}>
               <img src={person.image} alt={person.name} />
+              {console.log(person.image)}
               <h3 className="title-h3">{person.name}</h3>
               <p>{person.position}</p>
               <p>Links to social networks:</p>

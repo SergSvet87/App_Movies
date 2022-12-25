@@ -57,7 +57,7 @@ export const TEAM = [
   {
     id: 1,
     name: 'Serhii Svitlychnyi',
-    image: "../../assets/img/team/Serhii_Svit.png",
+    image: "./assets/img/team/Serhii_Svit.png",
     position: 'Designer & Front-End Developer',
     icons: [
       {
