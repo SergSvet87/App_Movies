@@ -1,7 +1,7 @@
 {
   "files": {
-    "main.css": "/App_Movies/static/css/main.13d79c77.css",
-    "main.js": "/App_Movies/static/js/main.d5cb214a.js",
+    "main.css": "/App_Movies/static/css/main.a098472c.css",
+    "main.js": "/App_Movies/static/js/main.79dc7d27.js",
     "static/media/logo.png": "/App_Movies/static/media/logo.027caf46722e896e19c5.png",
     "static/media/Kurale-Regular.ttf": "/App_Movies/static/media/Kurale-Regular.9afa76c471c1bd101ba1.ttf",
     "static/media/OpenSans-Regular.ttf": "/App_Movies/static/media/OpenSans-Regular.77c09223204154ae8d43.ttf",
@@ -10,11 +10,11 @@
     "static/media/dubl.png": "/App_Movies/static/media/dubl.2fb91e0fe81908ffce2e.png",
     "static/media/sprite-socials.svg": "/App_Movies/static/media/sprite-socials.4c78e4bbab82e681b3e0379dd5226606.svg",
     "index.html": "/App_Movies/index.html",
-    "main.13d79c77.css.map": "/App_Movies/static/css/main.13d79c77.css.map",
-    "main.d5cb214a.js.map": "/App_Movies/static/js/main.d5cb214a.js.map"
+    "main.a098472c.css.map": "/App_Movies/static/css/main.a098472c.css.map",
+    "main.79dc7d27.js.map": "/App_Movies/static/js/main.79dc7d27.js.map"
   },
   "entrypoints": [
-    "static/css/main.13d79c77.css",
-    "static/js/main.d5cb214a.js"
+    "static/css/main.a098472c.css",
+    "static/js/main.79dc7d27.js"
   ]
 }
