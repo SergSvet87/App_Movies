@@ -1,6 +1,7 @@
 import React from 'react';
 
-import btnPlay from '../../assets/img/btn-play.png';
+import btnPlay from '../../assets/img/film-info/btn-play.png';
+
 import styles from './MovieInfo.module.scss';
 
 export const FilmDetails = ({ movie }) => {
@@ -25,8 +26,15 @@ export const FilmDetails = ({ movie }) => {
             height={480}
           />
           <div className={styles.play}>
-            <a href={movie.torrents[0].url} download={`${movie.title_long}.torrent`}>
-              <img src={btnPlay} alt="Play" height={100} title={`Download ${movie.title_long}`} />
+            <a
+              href={movie.torrents[0].url}
+              download={`${movie.title_long}.torrent`}>
+              <img
+                src={btnPlay}
+                alt="Play"
+                height={100}
+                title={`Download ${movie.title_long}`}
+              />
             </a>
           </div>
         </div>

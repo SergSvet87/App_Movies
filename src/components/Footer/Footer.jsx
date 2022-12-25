@@ -1,7 +1,6 @@
 import React from 'react';
 
 // import "/node_modules/bootstrap/dist/css/bootstrap.min.css";
-import Icon from './Icon';
 import styles from './Footer.module.scss';
 
 const icons = [
