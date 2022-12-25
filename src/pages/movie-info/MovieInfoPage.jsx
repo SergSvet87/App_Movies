@@ -2,7 +2,7 @@ import { useState, useEffect } from 'react';
 import axios from 'axios';
 import { useDispatch } from 'react-redux';
 
-import { ALL_FILMS_URL } from '../../const';
+import { BASE_URL } from '../../const';
 import { FilmDetails } from './FilmDetails';
 import { Loader } from '../../components/loader/Loader';
 import { addMovies } from '../../redux/movies/movieSlice';
@@ -15,7 +15,7 @@ export const MovieInfoPage = () => {
   const getMovies = async () => {
     const {
       data: { data },
-    } = await axios.get(ALL_FILMS_URL);
+    } = await axios.get(BASE_URL);
     setMovies({ movies });
     dispatch(addMovies(data));
     setIsLoading(false);

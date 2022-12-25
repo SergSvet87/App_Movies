@@ -4,7 +4,7 @@ import { useDispatch } from 'react-redux';
 import { Link, NavLink } from 'react-router-dom';
 import { Pagination, PaginationItem, Stack } from '@mui/material';
 
-import { ALL_FILMS_URL } from '../../const';
+import { BASE_URL } from '../../const';
 import { POPULAR_FILMS_URL } from '../../const';
 import { Loader } from '../../components/loader/Loader';
 import { addMovies } from '../../redux/movies/movieSlice';
@@ -23,7 +23,7 @@ const HomePage = (props) => {
   const [pageQty, setPageQty] = useState(10);
 
   useEffect(() => {
-    axios.get(ALL_FILMS_URL + `page=${page}`).then(({ data }) => {
+    axios.get(BASE_URL + `page=${page}`).then(({ data }) => {
       setPageQty(data.nbPages);
 
       if (data.nbPages < page) {
@@ -36,7 +36,7 @@ const HomePage = (props) => {
   const getMovies = async () => {
     const {
       data: { data },
-    } = await axios.get(ALL_FILMS_URL);
+    } = await axios.get(BASE_URL);
     setMovies({ movies });
     dispatch(addMovies(data));
     setIsLoading(false);
