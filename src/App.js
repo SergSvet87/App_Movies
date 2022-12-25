@@ -6,7 +6,7 @@ import { Loader } from './components/loader/Loader';
 
 export const App = () => (
   <>
-    <RouterProvider base router={router} fallbackElement={<Loader />}></RouterProvider>
+    <RouterProvider router={router} fallbackElement={<Loader />}></RouterProvider>
     <MemoryRouter basename="/App_Movies"></MemoryRouter>
   </>
 );
