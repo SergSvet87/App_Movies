@@ -9,13 +9,13 @@ export const AboutPage = () => {
         <h1 className="title-h1">About Us</h1>
 
         <p>
-          Наша команда для створення даного додатку використала ресурс YTS.MX —
-          єдиний новий офіційний домен для фільмів YIFY. Цей ресурс надав чудові
-          методи для повноцінного та якісного відображення потріного контенту, а
-          також яскраву взаємодію нашого додатку з API сервісу. Щоб перейти на
-          API документацію натисни{' '}
+          Our team used the YTS.MX resource to create this application — the
+          only new official domain for YIFY movies. This resource provided
+          excellent methods for full-fledged and high-quality display of triple
+          content, and as well as the vivid interaction of our application with
+          the API of the service. To go to click on the 
           <a href="https://yts.mx/api" title="https://yts.mx/api">
-            API Documentation
+             API Documentation.
           </a>
         </p>
 

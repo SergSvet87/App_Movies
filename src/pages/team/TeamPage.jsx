@@ -10,15 +10,14 @@ export const TeamPage = () => {
     <div className="container">
       <section className={styles.team}>
         <h1 className="title-h1">Our Team</h1>
-        <p class={styles.text}>
+        <p className={styles.text}>
           We are small but effective and friendly team that can implement
           necessary functionality!
         </p>
-        <ul class={styles.list}>
+        <ul className={styles.list}>
           {TEAM.map((person) => (
-            <li class={styles.item} key={person.id}>
+            <li className={styles.item} key={person.id}>
               <img src={person.image} alt={person.name} />
-              {console.log(person.image)}
               <h3 className="title-h3">{person.name}</h3>
               <p>{person.position}</p>
               <p>Links to social networks:</p>
