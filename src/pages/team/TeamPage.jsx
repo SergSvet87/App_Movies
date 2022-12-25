@@ -1,6 +1,7 @@
 import React from 'react';
 
 import { TEAM } from '../../const';
+
 import Icon from './Icon';
 
 import styles from './Team.module.scss';

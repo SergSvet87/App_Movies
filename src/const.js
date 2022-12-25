@@ -1,3 +1,5 @@
+import SerhiiPhoto from './assets/img/team/Serhii_Svit.png';
+
 export const PATHS = {
   home: '/',
   about: '/about',
@@ -7,19 +9,18 @@ export const PATHS = {
   movieId: (id = null) => (id ? `movieId=${id}` : 'movieId=:movieId'),
 };
 
+export const BASE_URL = `https://yts.mx/api/v2/list_movies.json?limit=30&sort_by=year&`; //main
 
-export const BASE_URL = `https://yts.mx/api/v2/list_movies.json?limit=30&sort_by=year&`  //main
+export const PAGE_URL = `https://yts.mx/api/v2/list_movies.json?limit=30&sort_by=year&page=1`; //pages
 
-export const PAGE_URL = `https://yts.mx/api/v2/list_movies.json?limit=30&sort_by=year&page=1`  //pages
+export const GENRE_URL = `https://yts.mx/api/v2/list_movies.json?limit=30&sort_by=year&page=1&genre=fantasy`; //genre
 
-export const GENRE_URL = `https://yts.mx/api/v2/list_movies.json?limit=30&sort_by=year&page=1&genre=fantasy`  //genre
+export const POPULAR_FILMS_URL = `https://yts.mx/api/v2/movie_suggestions.json?movie_id=10`; //popular
 
-export const POPULAR_FILMS_URL = `https://yts.mx/api/v2/movie_suggestions.json?movie_id=10`  //popular
-
-export const INFO_FILM_URL = 'https://yts.mx/api/v2/movie_details.json?movie_id=1000&with_images=true&with_cast=true'  //info film
+export const INFO_FILM_URL =
+  'https://yts.mx/api/v2/movie_details.json?movie_id=1000&with_images=true&with_cast=true'; //info film
 
 // ?genre=fantasy&sort_by=year&limit=33&minimum_rating=5.5
-
 
 export const PAGES = ['home', 'about', 'team'];
 
@@ -57,7 +58,7 @@ export const TEAM = [
   {
     id: 1,
     name: 'Serhii Svitlychnyi',
-    image: "./assets/img/team/Serhii_Svit.png",
+    image: SerhiiPhoto,
     position: 'Designer & Front-End Developer',
     icons: [
       {
@@ -90,12 +91,12 @@ export const TEAM = [
         href: 'viber://chat?number=%2B380976157541',
         size: 28,
       },
-    ]
+    ],
   },
   {
     id: 2,
     name: 'Ruslan Vasylyshyn',
-    image: '../../assets/img/team/Serhii_Svit.png',
+    image: SerhiiPhoto,
     position: 'Designer & Front-End Developer',
     icons: [
       {
@@ -128,12 +129,12 @@ export const TEAM = [
         href: 'viber://chat?number=%2B380976157541',
         size: 28,
       },
-    ]
+    ],
   },
   {
     id: 3,
     name: 'Mykola S',
-    image: '../../assets/img/team/Serhii_Svit.png',
+    image: SerhiiPhoto,
     position: 'Designer & Front-End Developer',
     icons: [
       {
@@ -166,6 +167,6 @@ export const TEAM = [
         href: 'viber://chat?number=%2B380976157541',
         size: 28,
       },
-    ]
-  }
+    ],
+  },
 ];
