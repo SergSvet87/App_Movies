@@ -1,6 +1,9 @@
 import { createHashRouter } from 'react-router-dom';
+import axios from 'axios';
 
+import { BASE_URL } from './const';
 import { PATHS } from './const';
+import { loaderMain } from './utils/loaderMain';
 import { loaderMovieInfo } from './utils/loaderMovieInfo';
 import { loaderMovieByGenre } from './utils/loaderMovieByGenre';
 import { Layout } from './layout';
@@ -23,6 +26,7 @@ export const router = createHashRouter([
       {
         index: true,
         element: <HomePage />,
+        // loader: loaderMain,
       },
       {
         path: PATHS.about,
@@ -33,7 +37,7 @@ export const router = createHashRouter([
         element: <TeamPage />,
       },
       {
-        path: PATHS.movie,
+        path: PATHS.movieId(),
         element: <MovieInfoPage />,
         loader: loaderMovieInfo,
       },

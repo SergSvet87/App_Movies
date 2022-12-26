@@ -1,4 +1,9 @@
 import { useRouteError } from 'react-router-dom';
+import { NavLink } from 'react-router-dom';
+
+import { PATHS } from '../../const';
+
+import './error-page.scss';
 
 export const ErrorPage = () => {
   const error = useRouteError();
@@ -19,6 +24,7 @@ export const ErrorPage = () => {
             color: '#fd920f',
           }}
           className="bx bxs-down-arrow-alt"></i>
+        <NavLink to={PATHS.home}>HOME</NavLink>
       </p>
     </section>
   );
