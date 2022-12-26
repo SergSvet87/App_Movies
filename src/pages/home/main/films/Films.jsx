@@ -2,12 +2,16 @@ import { useSelector } from 'react-redux';
 import { useNavigate } from 'react-router-dom';
 
 import { getAllMovies } from '../../../../redux/movies/movieSlice';
+import { getPopularMovies } from '../../../../redux/movies/popularMovieSlice';
+
 import { Film } from './Film';
 
 import styles from './Films.module.scss';
 
 export const Films = () => {
   const moviesFromRedux = useSelector(getAllMovies);
+  console.log('moviesFromRedux', moviesFromRedux);
+
   const navigate = useNavigate();
 
   const films = moviesFromRedux.movies.filter(
