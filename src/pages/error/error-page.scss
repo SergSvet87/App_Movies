@@ -1,8 +1,11 @@
+@import '../../scss/variables';
+
 .error-page {
-  position: relative;
-  padding: 50px;
+  position : relative;
+  padding  : 50px;
   font-size: 28px;
-  color: $c-white;
+  color    : $white-color;
+  text-align: center;
 
   &__text {
     padding: 20px 0;
@@ -10,7 +13,7 @@
 
   &__link {
     padding-top: 30px;
-    color: $c-white;
+    color      : $white-color;
 
     &:hover {
       text-decoration: underline;

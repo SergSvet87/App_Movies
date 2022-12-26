@@ -5,7 +5,7 @@ import styles from './About.module.scss';
 export const AboutPage = () => {
   return (
     <div className="container">
-      <div class={styles.about}>
+      <div className={styles.about}>
         <h1 className="title-h1">About Us</h1>
 
         <p>

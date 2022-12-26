@@ -7,6 +7,7 @@ import { PATHS } from '../../../../const';
 import styles from './Films.module.scss';
 
 export const Film = ({ id, year, rating, title, summary, poster, genres }) => {
+
   return (
     <>
       <div className={styles.poster}>
@@ -15,7 +16,7 @@ export const Film = ({ id, year, rating, title, summary, poster, genres }) => {
         <p className={styles.year}>{year}</p>
       </div>
       <div className={styles.text}>
-        <NavLink to={PATHS.movie}>
+        <NavLink to={PATHS.movieId(id)}>
           <h3 className={styles.title}>{title}</h3>
         </NavLink>
         <ul className={styles.genres}>
