@@ -2,13 +2,15 @@ import { useSelector } from 'react-redux';
 import { NavLink } from 'react-router-dom';
 
 import { PATHS } from '../../../const';
-import { getAllMovies } from '../../../redux/movies/movieSlice';
 import { Film } from './Film';
 
 import styles from './Sidebar.module.scss';
 
 export const Sidebar = () => {
-  const popularMoviesFromRedux = useSelector(getAllMovies);
+  const popularMoviesFromRedux = useSelector(
+    (state) => state.popularMovies.popularMovies
+  );
+  console.log(popularMoviesFromRedux);
 
   const films = popularMoviesFromRedux.movies.filter(
     (film) => film.summary !== '' && film.medium_cover_image !== '404'

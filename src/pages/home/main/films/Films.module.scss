@@ -6,7 +6,7 @@
 
 .films {
   width: 75%;
-  @include flex(space-between, flex-top);
+  @include flex(space-evenly, flex-top);
 
   .film {
     width: 300px;

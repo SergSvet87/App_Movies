@@ -5,8 +5,9 @@ export const PATHS = {
   about: '/about',
   team: '/team',
   movie: '/movie',
-  genre: (genre) => (genre ? `genre=${genre}` : 'genre=:genre'),
-  movieId: (id = null) => (id ? `movieId=${id}` : 'movieId=:movieId'),
+  page: (page) => (page ? `&page=${page}` : '&page=:page'),
+  genre: (genre) => (genre ? `&genre=${genre}` : '&genre=:genre'),
+  movieId: (id = null) => (id ? `&movie_id=${id}` : '&movie_id=:movie_id'),
 };
 
 export const BASE_URL = `https://yts.mx/api/v2/list_movies.json?limit=30&sort_by=year&`; //main
@@ -18,7 +19,7 @@ export const GENRE_URL = `https://yts.mx/api/v2/list_movies.json?limit=30&sort_b
 export const POPULAR_FILMS_URL = `https://yts.mx/api/v2/movie_suggestions.json?movie_id=10`; //popular
 
 export const INFO_FILM_URL =
-  'https://yts.mx/api/v2/movie_details.json?movie_id=2000&with_images=true&with_cast=true'; //info film
+  'https://yts.mx/api/v2/movie_details.json?with_images=true&with_cast=true&movie_id=2000'; //info film
 
 // ?genre=fantasy&sort_by=year&limit=33&minimum_rating=5.5
 

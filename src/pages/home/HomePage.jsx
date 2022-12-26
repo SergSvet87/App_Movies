@@ -7,15 +7,11 @@ import { Pagination, PaginationItem, Stack } from '@mui/material';
 import { BASE_URL } from '../../const';
 import { POPULAR_FILMS_URL } from '../../const';
 import { Loader } from '../../components/loader/Loader';
-import { addMovies } from '../../redux/movies/movieSlice';
-import { addPopularMovies } from '../../redux/movies/movieSlice';
+import { addMovies, addPopularMovies } from '../../redux/movies/movieSlice';
 import { Films } from './main/films/Films';
 import { Sidebar } from './sidebar/Sidebar';
-import HomePage1 from './HomePage1';
 
 const HomePage = (props) => {
-  const [movies, setMovies] = useState({});
-  const [popularMovies, setPopularMovies] = useState({});
   const [isLoading, setIsLoading] = useState(true);
   const dispatch = useDispatch();
 
@@ -35,19 +31,21 @@ const HomePage = (props) => {
 
   const getMovies = async () => {
     const {
-      data: { data },
+      data: {
+        data: { movies },
+      },
     } = await axios.get(BASE_URL);
-    setMovies({ movies });
-    dispatch(addMovies(data));
+    dispatch(addMovies({ movies }));
     setIsLoading(false);
   };
 
   const getPopularMovies = async () => {
     const {
-      data: { data },
+      data: {
+        data: { movies },
+      },
     } = await axios.get(POPULAR_FILMS_URL);
-    setPopularMovies({ movies });
-    dispatch(addMovies(data));
+    dispatch(addPopularMovies({ movies }));
     setIsLoading(false);
   };
 
@@ -59,8 +57,8 @@ const HomePage = (props) => {
   return (
     <div className="container">
       <div style={{ display: 'flex', paddingTop: '50px' }}>
-        {isLoading ? <Loader /> : <Films movies={movies.movies} />}
-        {isLoading ? <Loader /> : <Sidebar popularMovies={movies.movies} />}
+        {isLoading ? <Loader /> : <Films />}
+        {isLoading ? <Loader /> : <Sidebar />}
       </div>
       <Stack spacing={2}>
         {/* {pageQty && ( */}
