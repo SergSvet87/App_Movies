@@ -1,14 +1,15 @@
 import { useSelector } from 'react-redux';
 
-import { getAllMovies } from '../../../redux/movies/movieSlice';
 import { Film } from './Film';
 
 import styles from './Sidebar.module.scss';
 
 export const Sidebar = () => {
-  const popularMoviesFromRedux = useSelector(getAllMovies);
+  const popularMovieFromStore = useSelector(
+    (state) => state.popularMovies.popularMovies
+  );
 
-  const films = popularMoviesFromRedux.movies.filter(
+  const films = popularMovieFromStore.filter(
     (film) =>
       film.summary !== '' &&
       film.medium_cover_image !== '404' &&

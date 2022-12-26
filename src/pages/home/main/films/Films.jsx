@@ -1,22 +1,20 @@
 import { useSelector } from 'react-redux';
 import { useNavigate } from 'react-router-dom';
 
-import { getAllMovies } from '../../../../redux/movies/movieSlice';
 import { Film } from './Film';
 
 import styles from './Films.module.scss';
 
 export const Films = () => {
-  const moviesFromRedux = useSelector(getAllMovies);
+  const movieFromStore = useSelector((state) => state.movies.movies);
   const navigate = useNavigate();
 
-  const films = moviesFromRedux.movies.filter(
+  const films = movieFromStore.filter(
     (film) =>
       film.summary !== '' &&
       film.medium_cover_image !== '404' &&
       film.rating !== 0
   );
-
   return (
     <>
       <ul className={styles.films}>
