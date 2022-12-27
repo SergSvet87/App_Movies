@@ -1,14 +1,12 @@
 import { createHashRouter } from 'react-router-dom';
 
 import { PATHS } from './const';
-import { loaderMain } from './utils/loaderMain';
-import { LoaderMovieInfo } from './utils/LoaderMovieInfo';
-import { loaderMovieByGenre } from './utils/loaderMovieByGenre';
+import { loaderMovieInfo } from './utils/loaderMovieInfo';
 import { Layout } from './layout';
 
 import { ErrorPage } from './pages/error/error-page';
 import { NotFoundPage } from './pages/not-found/not-found-page';
-import HomePage from './pages/home/HomePage';
+import { HomePage } from './pages/home/HomePage';
 import { AboutPage } from './pages/about/AboutPage';
 import { TeamPage } from './pages/team/TeamPage';
 import { MovieInfoPage } from './pages/movie-info/MovieInfoPage';
@@ -23,7 +21,6 @@ export const router = createHashRouter([
       {
         index: true,
         element: <HomePage />,
-        // loader: loaderMain,
       },
       {
         path: PATHS.about,
@@ -36,12 +33,12 @@ export const router = createHashRouter([
       {
         path: PATHS.movieId(),
         element: <MovieInfoPage />,
-        loader: LoaderMovieInfo,
+        loader: loaderMovieInfo,
       },
       {
         path: PATHS.genre(),
         element: <MoviesByGenrePage />,
-        loader: loaderMovieByGenre,
+
       },
       {
         path: '*',

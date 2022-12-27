@@ -1,17 +1,19 @@
-import { useSelector } from 'react-redux';
-
 import { Film } from './Film';
 
 import styles from './Films.module.scss';
 
-export const Films = ({ movies }) => {
-  const films = movies.filter(
-    (film) => film.summary !== '' && film.medium_cover_image !== '404'
-  );
+export const Films = ({movies}) => {
 
+  const films = movies.filter(
+    (film) =>
+      film.summary !== '' &&
+      film.medium_cover_image !== '404' &&
+      film.rating !== 0
+  );
   return (
-    <>
-      <ul className={styles.films}>
+    <section className={styles.films}>
+      <h2 className="title-h2">Your favorite movies:</h2>
+      <ul className={styles.list}>
         {films.map((movie) => (
           <li className={styles.film} key={movie.id}>
             <Film
@@ -26,6 +28,6 @@ export const Films = ({ movies }) => {
           </li>
         ))}
       </ul>
-    </>
+    </section>
   );
 };

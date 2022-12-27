@@ -4,10 +4,9 @@ import { NavLink } from 'react-router-dom';
 
 import { PATHS } from '../../../const';
 
-import styles from './Sidebar.module.scss';
+import styles from './Films.module.scss';
 
 export const Film = ({ id, year, rating, title, summary, poster, genres }) => {
-
   return (
     <>
       <div className={styles.poster}>
@@ -26,7 +25,7 @@ export const Film = ({ id, year, rating, title, summary, poster, genres }) => {
             </li>
           ))}
         </ul>
-        <div className={styles.summary}>{summary.slice(0, 200)}...</div>
+        {/* <div className={styles.summary}>{summary.slice(0, 150)}...</div> */}
       </div>
     </>
   );

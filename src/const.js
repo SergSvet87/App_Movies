@@ -5,7 +5,6 @@ export const PATHS = {
   about: '/about',
   team: '/team',
   movie: '/movie',
-  page: (page) => (page ? `&page=${page}` : '&page=:page'),
   genre: (genre) => (genre ? `&genre=${genre}` : '&genre=:genre'),
   movieId: (id = null) => (id ? `&movie_id=${id}` : '&movie_id=:id'),
 };
@@ -14,7 +13,7 @@ export const BASE_URL = `https://yts.mx/api/v2/list_movies.json?limit=30&sort_by
 
 export const PAGE_URL = `https://yts.mx/api/v2/list_movies.json?limit=30&sort_by=year&page=1`; //pages
 
-export const GENRE_URL = `https://yts.mx/api/v2/list_movies.json?limit=30&sort_by=year&page=1&genre=fantasy`; //genre
+export const GENRE_URL = `https://yts.mx/api/v2/list_movies.json?limit=30&sort_by=year`; //genre
 
 export const POPULAR_FILMS_URL = `https://yts.mx/api/v2/movie_suggestions.json?`; //popular
 

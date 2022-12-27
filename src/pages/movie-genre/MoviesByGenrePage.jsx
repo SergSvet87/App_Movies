@@ -1,44 +1,33 @@
 import { useState, useEffect } from 'react';
 import axios from 'axios';
-import { useDispatch, useSelector } from 'react-redux';
-import { Link as NavLink } from 'react-router-dom';
+import { useDispatch } from 'react-redux';
+import { NavLink, useParams } from 'react-router-dom';
 import { Pagination, PaginationItem, Stack } from '@mui/material';
 
-import { BASE_URL } from '../../const';
 import { POPULAR_FILMS_URL } from '../../const';
 import {
-  addData,
-  addMovies,
+  useGetMoviesByGenreQuery,
   addPopularMovies,
 } from '../../redux/movies/movieSlice';
-import { Films } from './films/Films';
 import { Loader } from '../../components/loader/Loader';
-import { Sidebar } from './sidebar/Sidebar';
+import { Films } from '../../components/main/films/Films';
+import { Sidebar } from '../../components/main/sidebar/Sidebar';
 
 export const MoviesByGenrePage = () => {
-  const [isLoading, setIsLoading] = useState(true);
   const dispatch = useDispatch();
-  const dataFromStore = useSelector((state) => state.data.data);
-  const movieCount = Number(dataFromStore.movie_count);
-  const movieLimit = Number(dataFromStore.limit);
-  const movieID = Number(dataFromStore.movies[0].id);
 
+  const params = useParams();
   const [page, setPage] = useState(parseInt(1));
-  const [pageQty, setPageQty] = useState(0);
+
+  const { data, isLoading } = useGetMoviesByGenreQuery(params.genre, page);
+
+  const movieLimit = data === undefined ? '' : data.data.limit;
+  const movieCount = data === undefined ? '' : data.data.movie_count;
+  const movieId = data === undefined ? '' : data.data.movies[2].id;
+  const pageQty = Math.ceil(movieCount / movieLimit);
 
   useEffect(() => {
-    axios.get(BASE_URL + `&page=${page}&genre=crime`).then(({ data }) => {
-      dispatch(addData(data));
-      dispatch(addMovies(data));
-      setPageQty(Math.ceil(movieCount / movieLimit));
-
-      if (pageQty < page) {
-        setPage(parseInt(1));
-      }
-      setIsLoading(false);
-    });
-
-    axios.get(POPULAR_FILMS_URL + `movie_id=${movieID}`).then(
+    axios.get(POPULAR_FILMS_URL + `movie_id=${movieId}`).then(
       ({
         data: {
           data: { movies },
@@ -47,12 +36,12 @@ export const MoviesByGenrePage = () => {
         dispatch(addPopularMovies({ movies }));
       }
     );
-  }, [page, dispatch, movieCount, movieLimit, pageQty, movieID]);
+  }, [dispatch, movieId]);
 
   return (
     <div className="container">
       <div style={{ display: 'flex' }}>
-        {isLoading ? <Loader /> : <Films />}
+        {isLoading ? <Loader /> : <Films movies={data.data.movies} />}
         {isLoading ? <Loader /> : <Sidebar />}
       </div>
       <Stack spacing={2}>
