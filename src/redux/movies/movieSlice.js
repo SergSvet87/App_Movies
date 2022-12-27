@@ -1,30 +1,25 @@
 import { createSlice } from '@reduxjs/toolkit';
+import { createApi, fetchBaseQuery } from '@reduxjs/toolkit/query/react';
+
+export const moviesApi = createApi({
+  reducerPath: 'moviesApi',
+  tagTypes: ['Movies'],
+  baseQuery: fetchBaseQuery({ baseUrl: 'https://yts.mx/api/v2/list_movies.json' }),
+  endpoints: (build) => ({
+    getMovies: build.query({
+      query: (page = '') => `movies?${page && `page=${page}`}`,
+    }),
+    getMoviesByGenre: build.query({
+      query: (genre) => `movies?genre=${genre}`,
+    }),
+  })
+});
+
+export const { useGetMoviesQuery, useGetMoviesByGenreQuery } = moviesApi;
 
 const initialState = {
-  data: [],
-  movies: [],
   popularMovies: [],
 };
-
-const dataSlice = createSlice({
-  name: 'data',
-  initialState,
-  reducers: {
-    addData: (state, action) => {
-      state.data = action.payload.data;
-    },
-  },
-});
-
-const movieSlice = createSlice({
-  name: 'movies',
-  initialState,
-  reducers: {
-    addMovies: (state, action) => {
-      state.movies = action.payload.data.movies;
-    },
-  },
-});
 
 const popularMovieSlice = createSlice({
   name: 'popularMovies',
@@ -36,10 +31,6 @@ const popularMovieSlice = createSlice({
   },
 });
 
-export const { addData } = dataSlice.actions;
-export const { addMovies } = movieSlice.actions;
 export const { addPopularMovies } = popularMovieSlice.actions;
 
-export const dataReducer = dataSlice.reducer;
-export const moviesReducer = movieSlice.reducer;
 export const popularMoviesReducer = popularMovieSlice.reducer;

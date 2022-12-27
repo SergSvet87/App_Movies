@@ -1,60 +1,46 @@
 import { useState, useEffect } from 'react';
-import axios from 'axios';
-import { useDispatch, useSelector } from 'react-redux';
 import { NavLink } from 'react-router-dom';
+import axios from 'axios';
+import { useDispatch } from 'react-redux';
 import { Pagination, PaginationItem, Stack } from '@mui/material';
 
-import { BASE_URL } from '../../const';
 import { POPULAR_FILMS_URL } from '../../const';
-import { Loader } from '../../components/loader/Loader';
 import {
-  addData,
-  addMovies,
+  useGetMoviesQuery,
   addPopularMovies,
 } from '../../redux/movies/movieSlice';
-import { Films } from './main/films/Films';
-import { Sidebar } from './sidebar/Sidebar';
+import { Loader } from '../../components/loader/Loader';
+import { Films } from '../../components/main/films/Films';
+import { Sidebar } from '../../components/main/sidebar/Sidebar';
 
-const HomePage = () => {
-  const [isLoading, setIsLoading] = useState(true);
+export const HomePage = () => {
   const dispatch = useDispatch();
-  const dataFromStore = useSelector((state) => state.data.data);
-  const movieCount = Number(dataFromStore.movie_count);
-  const movieLimit = Number(dataFromStore.limit);
-  const movieID = dataFromStore.length === 0 ? '' : dataFromStore.movies[0].id;
 
-  const [page, setPage] = useState(parseInt(1));
-  const [pageQty, setPageQty] = useState(0);
+  const [page, setPage] = useState(1);
+
+  const { data, isLoading } = useGetMoviesQuery(page);
+
+  const movieLimit = data === undefined ? '' : data.data.limit;
+  const movieCount = data === undefined ? '' : data.data.movie_count;
+  const movieId = data === undefined ? '' : data.data.movies[2].id;
+  const pageQty = Math.ceil(movieCount / movieLimit);
 
   useEffect(() => {
-    axios.get(BASE_URL + `&page=${page}`).then(({ data }) => {
-      dispatch(addData(data));
-      dispatch(addMovies(data));
-      setPageQty(Math.ceil(movieCount / movieLimit));
-
-      if (pageQty < page) {
-        setPage(parseInt(1));
+    axios.get(POPULAR_FILMS_URL + `movie_id=${movieId}`).then(
+      ({
+        data: {
+          data: { movies },
+        },
+      }) => {
+        dispatch(addPopularMovies({ movies }));
       }
-      setIsLoading(false);
-    });
-
-    if (dataFromStore.length !== 0) {
-      axios.get(POPULAR_FILMS_URL + `movie_id=${movieID}`).then(
-        ({
-          data: {
-            data: { movies },
-          },
-        }) => {
-          dispatch(addPopularMovies({ movies }));
-        }
-      );
-    }
-  }, [page, dispatch, movieCount, movieLimit, pageQty, movieID]);
+    );
+  }, [dispatch, movieId]);
 
   return (
     <div className="container">
       <div style={{ display: 'flex', paddingTop: '50px' }}>
-        {isLoading ? <Loader /> : <Films />}
+        {isLoading ? <Loader /> : <Films movies={data.data.movies} />}
         {isLoading ? <Loader /> : <Sidebar />}
       </div>
       <Stack spacing={2}>
@@ -81,7 +67,4 @@ const HomePage = () => {
       </Stack>
     </div>
   );
-  //   }
 };
-
-export default HomePage;
