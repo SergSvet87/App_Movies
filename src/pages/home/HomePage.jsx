@@ -21,7 +21,7 @@ const HomePage = () => {
   const dataFromStore = useSelector((state) => state.data.data);
   const movieCount = Number(dataFromStore.movie_count);
   const movieLimit = Number(dataFromStore.limit);
-  const movieID = Number(dataFromStore.movies[0].id);
+  const movieID = dataFromStore.length === 0 ? '' : dataFromStore.movies[0].id;
 
   const [page, setPage] = useState(parseInt(1));
   const [pageQty, setPageQty] = useState(0);
@@ -38,6 +38,7 @@ const HomePage = () => {
       setIsLoading(false);
     });
 
+    // if (dataFromStore !== []) {
     axios.get(POPULAR_FILMS_URL + `movie_id=${movieID}`).then(
       ({
         data: {
@@ -47,6 +48,7 @@ const HomePage = () => {
         dispatch(addPopularMovies({ movies }));
       }
     );
+    // }
   }, [page, dispatch, movieCount, movieLimit, pageQty, movieID]);
 
   return (
