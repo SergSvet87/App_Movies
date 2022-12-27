@@ -2,7 +2,7 @@ import { useState, useEffect } from 'react';
 import axios from 'axios';
 import { useDispatch, useSelector } from 'react-redux';
 import { NavLink } from 'react-router-dom';
-import { Pagination, PaginationItem, Stack, Link } from '@mui/material';
+import { Pagination, PaginationItem, Stack } from '@mui/material';
 
 import { BASE_URL } from '../../const';
 import { POPULAR_FILMS_URL } from '../../const';
@@ -26,61 +26,27 @@ const HomePage = () => {
   const [pageQty, setPageQty] = useState(0);
 
   useEffect(() => {
-    axios.get(BASE_URL + `&page=${page}`).then(({data}) => {
+    axios.get(BASE_URL + `&page=${page}`).then(({ data }) => {
       dispatch(addData(data));
       dispatch(addMovies(data));
       setPageQty(Math.ceil(movieCount / movieLimit));
 
-    if (pageQty < page) {
-      setPage(parseInt(1));
-    }
+      if (pageQty < page) {
+        setPage(parseInt(1));
+      }
       setIsLoading(false);
     });
-    
+
+    axios.get(POPULAR_FILMS_URL).then(
+      ({
+        data: {
+          data: { movies },
+        },
+      }) => {
+        dispatch(addPopularMovies({ movies }));
+      }
+    );
   }, [page, dispatch, movieCount, movieLimit, pageQty]);
-
-  // const getMovies = async () => {
-  //   const {
-  //     data: {
-  //       data: { movies },
-  //     },
-  //   } = await axios.get(BASE_URL);
-  //   dispatch(addMovies({ movies }));
-  //   setIsLoading(false);
-  // };
-
-  const getPopularMovies = async () => {
-    const {
-      data: {
-        data: { movies },
-      },
-    } = await axios.get(POPULAR_FILMS_URL);
-    dispatch(addPopularMovies({ movies }));
-    setIsLoading(false);
-  };
-
-  // const togglePage = async () => {
-  //   const {
-  //     data: {
-  //       data: { movies },
-  //     },
-  //   } = await axios.get(BASE_URL + `&page=${page}`);
-
-  //   setPageQty(Math.ceil(movieCount / movieLimit));
-
-  //   if (pageQty < page) {
-  //     setPage(parseInt(1));
-  //   }
-  //   dispatch(addMovies({ movies }));
-  //   setIsLoading(false);
-  // };
-
-  useEffect(() => {
-    // getData();
-    // getMovies();
-    getPopularMovies();
-    // togglePage();
-  }, []);
 
   return (
     <div className="container">
@@ -103,7 +69,6 @@ const HomePage = () => {
               <PaginationItem
                 color="primary"
                 component={NavLink}
-                // onChange={togglePage}
                 to={`/?page=${item.page}`}
                 {...item}
               />

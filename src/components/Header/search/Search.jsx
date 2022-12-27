@@ -17,6 +17,7 @@ export const Search = ({onSubmitHandler}) => {
           value={textSearch}
           onChange={(e) => setTextSearch(e.target.value)}
         />
+        <button>Search</button>
       </form>
       <i className="bx bx-customize"></i>
     </div>

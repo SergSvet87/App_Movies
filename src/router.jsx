@@ -1,7 +1,5 @@
 import { createHashRouter } from 'react-router-dom';
-import axios from 'axios';
 
-import { BASE_URL } from './const';
 import { PATHS } from './const';
 import { loaderMain } from './utils/loaderMain';
 import { loaderMovieInfo } from './utils/loaderMovieInfo';
@@ -15,7 +13,6 @@ import { AboutPage } from './pages/about/AboutPage';
 import { TeamPage } from './pages/team/TeamPage';
 import { MovieInfoPage } from './pages/movie-info/MovieInfoPage';
 import { MoviesByGenrePage } from './pages/movie-genre/MoviesByGenrePage';
-// import HomePage1 from './pages/home/HomePage1';
 
 export const router = createHashRouter([
   {

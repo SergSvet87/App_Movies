@@ -1,33 +1,52 @@
 @import '../../../scss/style.scss';
 
 .search {
-	width: 37%;
-	display: flex;
-	align-items: center;
-	border-radius: 30px;
-	background-color: #000;
-	border: 1px solid rgba($gray, 0.4);
-	padding: 1rem 1.5rem;
+	width           : 37%;
+	display         : flex;
+	align-items     : center;
+	border-radius   : 30px;
+	background-color: $bg-color;
+	border          : 1px solid rgba($gray, 0.4);
+	padding         : 1rem 1.5rem;
 
-	form {		
-		display: inline-flex;
-		flex: 1 1 auto;
-	}
+	form {
+		display : inline-flex;
+		flex    : 1 1 auto;
+		position: relative;
 
-	input {
-		background-color: transparent;
-		outline: none;
-		color: #fff;
-		margin-left: 1.5rem;
-		border: none;
-		
-		&::placeholder {
-			color: $gray;
+		input {
+			background-color: transparent;
+			outline         : none;
+			color           : #fff;
+			margin-left     : 1.5rem;
+			border          : none;
+
+			&::placeholder {
+				color: $gray;
+			}
 		}
+
+		button {
+			position        : absolute;
+			top             : calc(50% - 20px);
+			left           : calc(100% + 45px);
+			background-color: $bg-color;
+			padding: 10px;
+			border-radius: 10px;
+			cursor: pointer;
+			color: $primary-color;
+			text-transform: uppercase;
+
+			&:hover {
+				box-shadow: 0px 0px 4px rgba($primary-color, .3);
+			}
+		}
+
 	}
+
 
 	i {
-		color: $gray;
+		color    : $gray;
 		font-size: 20px;
 	}
 }
