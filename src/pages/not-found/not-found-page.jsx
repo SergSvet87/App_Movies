@@ -21,12 +21,12 @@ export const NotFoundPage = () => {
           <p>Sorry, there was a transition to a non-existent address.</p>
 
           <p>
-            Please return to the main page via the <NavLink className={styles.link} to={PATHS.home}>
-            Home
-          </NavLink>!{' '}
+            Please return to the main page via the
+            <NavLink className={styles.link} to={PATHS.home}>
+              Home
+            </NavLink>
+            !{' '}
           </p>
-
-          
         </div>
       </div>
     </section>

@@ -1,5 +1,4 @@
 import { useSelector } from 'react-redux';
-import { useNavigate } from 'react-router-dom';
 
 import { Film } from './Film';
 
@@ -7,7 +6,6 @@ import styles from './Films.module.scss';
 
 export const Films = () => {
   const movieFromStore = useSelector((state) => state.movies.movies);
-  const navigate = useNavigate();
 
   const films = movieFromStore.filter(
     (film) =>
@@ -16,8 +14,9 @@ export const Films = () => {
       film.rating !== 0
   );
   return (
-    <>
-      <ul className={styles.films}>
+    <section className={styles.films}>
+      <h2 className="title-h2">Your favorite movies:</h2>
+      <ul className={styles.list}>
         {films.map((movie) => (
           <li className={styles.film} key={movie.id}>
             <Film
@@ -32,6 +31,6 @@ export const Films = () => {
           </li>
         ))}
       </ul>
-    </>
+    </section>
   );
 };

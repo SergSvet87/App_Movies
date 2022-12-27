@@ -17,20 +17,23 @@ export const Sidebar = () => {
   );
 
   return (
-    <ul className={styles.sidebar}>
-      {films.map((movie) => (
-        <li className={styles.film} key={movie.id}>
-          <Film
-            id={movie.id}
-            rating={movie.rating}
-            year={movie.year}
-            title={movie.title}
-            poster={movie.medium_cover_image}
-            genres={movie.genres}
-            summary={movie.summary}
-          />
-        </li>
-      ))}
-    </ul>
+    <section className={styles.sidebar}>
+      <h3 className="title-h3">Recommended movies:</h3>
+      <ul>
+        {films.map((movie) => (
+          <li className={styles.film} key={movie.id}>
+            <Film
+              id={movie.id}
+              rating={movie.rating}
+              year={movie.year}
+              title={movie.title}
+              poster={movie.medium_cover_image}
+              genres={movie.genres}
+              summary={movie.summary}
+            />
+          </li>
+        ))}
+      </ul>
+    </section>
   );
 };

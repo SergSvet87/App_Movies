@@ -5,76 +5,84 @@
 }
 
 .films {
-  width: 75%;
-  @include flex(space-evenly, flex-top);
+  width         : 75%;
+  display       : flex;
+  flex-direction: column;
 
-  .film {
-    width: 300px;
-    min-height: 570px;
-    padding: 15px;
-    text-align: center;
-    margin-bottom: 20px;
+  h2 {
+    margin-bottom: 30px;
   }
 
-  .poster {
-    position: relative;
-    margin-bottom: 15px;
+  .list {
+    @include flex(space-evenly, flex-top);
 
-    img {
-      width: 100%;
-      min-height: 405px;
-      border-radius: 18px;
+    .film {
+      width        : 300px;
+      min-height   : 570px;
+      padding      : 15px;
+      text-align   : center;
+      margin-bottom: 20px;
     }
 
-    .rating {
-      width: 70px;
-      position: absolute;
-      top: 30px;
-      left: 20px;
-      padding: 3px;
-      background-color: $tabs-color;
-      color: $primary-color;
-      font-size: 16px;
-      border-radius: 15px;
-    }
-
-    .year {
-      width: 80px;
-      position: absolute;
-      bottom: 20px;
-      right: 20px;
-      padding: 3px;
-      background-color: $tabs-color;
-      color: $primary-color;
-      font-size: 18px;
-      border-radius: 15px;
-    }
-  }
-
-  .text {
-
-    .title {
-      min-height: 70px;
-      font-family: $ff-kurale;
-      font-size: 28px;
+    .poster {
+      position     : relative;
       margin-bottom: 15px;
-    }
-      
-    .genres {
-      @include flex(center, center);
-      
-      .genre {
-        font-weight: bold;
-        font-size: 14px;
-        color: $primary-color;
-        margin: 0 10px 10px;
+
+      img {
+        width        : 100%;
+        min-height   : 405px;
+        border-radius: 18px;
+      }
+
+      .rating {
+        width           : 70px;
+        position        : absolute;
+        top             : 30px;
+        left            : 20px;
+        padding         : 3px;
+        background-color: $tabs-color;
+        color           : $primary-color;
+        font-size       : 16px;
+        border-radius   : 15px;
+      }
+
+      .year {
+        width           : 80px;
+        position        : absolute;
+        bottom          : 20px;
+        right           : 20px;
+        padding         : 3px;
+        background-color: $tabs-color;
+        color           : $primary-color;
+        font-size       : 18px;
+        border-radius   : 15px;
       }
     }
 
-    .summary {
-      font-size: 14px;
-      text-align: left;
+    .text {
+
+      .title {
+        min-height   : 70px;
+        font-family  : $ff-kurale;
+        font-size    : 28px;
+        margin-bottom: 15px;
+      }
+
+      .genres {
+        @include flex(center, center);
+
+        .genre {
+          font-weight: bold;
+          font-size  : 14px;
+          color      : $primary-color;
+          margin     : 0 10px 10px;
+        }
+      }
+
+      .summary {
+        font-size : 14px;
+        text-align: left;
+      }
     }
   }
 }
-
