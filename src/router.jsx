@@ -2,7 +2,7 @@ import { createHashRouter } from 'react-router-dom';
 
 import { PATHS } from './const';
 import { loaderMain } from './utils/loaderMain';
-import { loaderMovieInfo } from './utils/loaderMovieInfo';
+import { LoaderMovieInfo } from './utils/LoaderMovieInfo';
 import { loaderMovieByGenre } from './utils/loaderMovieByGenre';
 import { Layout } from './layout';
 
@@ -36,7 +36,7 @@ export const router = createHashRouter([
       {
         path: PATHS.movieId(),
         element: <MovieInfoPage />,
-        loader: loaderMovieInfo,
+        loader: LoaderMovieInfo,
       },
       {
         path: PATHS.genre(),
