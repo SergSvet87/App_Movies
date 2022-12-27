@@ -38,17 +38,17 @@ const HomePage = () => {
       setIsLoading(false);
     });
 
-    // if (dataFromStore !== []) {
-    axios.get(POPULAR_FILMS_URL + `movie_id=${movieID}`).then(
-      ({
-        data: {
-          data: { movies },
-        },
-      }) => {
-        dispatch(addPopularMovies({ movies }));
-      }
-    );
-    // }
+    if (dataFromStore.length !== 0) {
+      axios.get(POPULAR_FILMS_URL + `movie_id=${movieID}`).then(
+        ({
+          data: {
+            data: { movies },
+          },
+        }) => {
+          dispatch(addPopularMovies({ movies }));
+        }
+      );
+    }
   }, [page, dispatch, movieCount, movieLimit, pageQty, movieID]);
 
   return (
