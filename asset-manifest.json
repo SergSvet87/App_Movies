@@ -1,7 +1,7 @@
 {
   "files": {
     "main.css": "/App_Movies/static/css/main.78306d8c.css",
-    "main.js": "/App_Movies/static/js/main.bd05be0e.js",
+    "main.js": "/App_Movies/static/js/main.42d51ed3.js",
     "static/media/logo.png": "/App_Movies/static/media/logo.027caf46722e896e19c5.png",
     "static/media/Kurale-Regular.ttf": "/App_Movies/static/media/Kurale-Regular.9afa76c471c1bd101ba1.ttf",
     "static/media/Serhii_Svit.png": "/App_Movies/static/media/Serhii_Svit.5620a54aa765664d2534.png",
@@ -12,10 +12,10 @@
     "static/media/sprite-socials.svg": "/App_Movies/static/media/sprite-socials.35a3ecc52d8c1d4d66a8d4ac6b084bfe.svg",
     "index.html": "/App_Movies/index.html",
     "main.78306d8c.css.map": "/App_Movies/static/css/main.78306d8c.css.map",
-    "main.bd05be0e.js.map": "/App_Movies/static/js/main.bd05be0e.js.map"
+    "main.42d51ed3.js.map": "/App_Movies/static/js/main.42d51ed3.js.map"
   },
   "entrypoints": [
     "static/css/main.78306d8c.css",
-    "static/js/main.bd05be0e.js"
+    "static/js/main.42d51ed3.js"
   ]
 }
