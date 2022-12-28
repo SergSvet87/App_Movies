@@ -1,7 +1,7 @@
 {
   "files": {
-    "main.css": "/App_Movies/static/css/main.1bd70b8a.css",
-    "main.js": "/App_Movies/static/js/main.518fced7.js",
+    "main.css": "/App_Movies/static/css/main.65ec2b8f.css",
+    "main.js": "/App_Movies/static/js/main.740e95ca.js",
     "static/media/logo.png": "/App_Movies/static/media/logo.027caf46722e896e19c5.png",
     "static/media/Kurale-Regular.ttf": "/App_Movies/static/media/Kurale-Regular.9afa76c471c1bd101ba1.ttf",
     "static/media/Serhii_Svit.png": "/App_Movies/static/media/Serhii_Svit.5620a54aa765664d2534.png",
@@ -9,13 +9,13 @@
     "static/media/OpenSans-Bold.ttf": "/App_Movies/static/media/OpenSans-Bold.fa428cdd2e334e2be904.ttf",
     "static/media/btn-play.png": "/App_Movies/static/media/btn-play.c078fdb0366a66c1da15.png",
     "static/media/dubl.png": "/App_Movies/static/media/dubl.2fb91e0fe81908ffce2e.png",
-    "static/media/sprite-socials.svg": "/App_Movies/static/media/sprite-socials.47503b4531fcec4913202ba12f9c1112.svg",
+    "static/media/sprite-socials.svg": "/App_Movies/static/media/sprite-socials.35a3ecc52d8c1d4d66a8d4ac6b084bfe.svg",
     "index.html": "/App_Movies/index.html",
-    "main.1bd70b8a.css.map": "/App_Movies/static/css/main.1bd70b8a.css.map",
-    "main.518fced7.js.map": "/App_Movies/static/js/main.518fced7.js.map"
+    "main.65ec2b8f.css.map": "/App_Movies/static/css/main.65ec2b8f.css.map",
+    "main.740e95ca.js.map": "/App_Movies/static/js/main.740e95ca.js.map"
   },
   "entrypoints": [
-    "static/css/main.1bd70b8a.css",
-    "static/js/main.518fced7.js"
+    "static/css/main.65ec2b8f.css",
+    "static/js/main.740e95ca.js"
   ]
 }
