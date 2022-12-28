@@ -27,15 +27,17 @@ export const MoviesByGenrePage = () => {
   const pageQty = Math.ceil(movieCount / movieLimit);
 
   useEffect(() => {
-    axios.get(POPULAR_FILMS_URL + `movie_id=${movieId}`).then(
-      ({
-        data: {
-          data: { movies },
-        },
-      }) => {
-        dispatch(addPopularMovies({ movies }));
-      }
-    );
+    if (data !== undefined) {
+      axios.get(POPULAR_FILMS_URL + `movie_id=${movieId}`).then(
+        ({
+          data: {
+            data: { movies },
+          },
+        }) => {
+          dispatch(addPopularMovies({ movies }));
+        }
+      );
+    }
   }, [dispatch, movieId]);
 
   return (
