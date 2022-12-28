@@ -28,7 +28,7 @@ function Slider() {
   });
 
   const next = () => {
-    if (currentSlide === 8) {
+    if (currentSlide === (defaultSlides.length-1)) {
       setCurrentSlide(0);
     } else {
       setCurrentSlide(currentSlide + 1);
@@ -37,7 +37,7 @@ function Slider() {
 
   const prev = () => {
     if (currentSlide === 0) {
-      setCurrentSlide(8);
+      setCurrentSlide((defaultSlides.length-1));
     } else {
       setCurrentSlide(currentSlide - 1);
     }
