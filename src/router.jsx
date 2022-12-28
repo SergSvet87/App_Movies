@@ -38,7 +38,6 @@ export const router = createHashRouter([
       {
         path: PATHS.genre(),
         element: <MoviesByGenrePage />,
-
       },
       {
         path: '*',

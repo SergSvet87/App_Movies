@@ -17,13 +17,13 @@ export const MoviesByGenrePage = () => {
   const dispatch = useDispatch();
 
   const params = useParams();
-  const [page, setPage] = useState(parseInt(1));
+  const [page, setPage] = useState(1);
 
-  const { data, isLoading } = useGetMoviesByGenreQuery(params.genre, page);
+  const { data, isLoading } = useGetMoviesByGenreQuery({genre: params.genre, page: page});
 
   const movieLimit = data === undefined ? '' : data.data.limit;
   const movieCount = data === undefined ? '' : data.data.movie_count;
-  const movieId = data === undefined ? '' : data.data.movies[2].id;
+  const movieId = data === undefined ? '' : data.data.movies[0].id;
   const pageQty = Math.ceil(movieCount / movieLimit);
 
   useEffect(() => {
@@ -42,7 +42,7 @@ export const MoviesByGenrePage = () => {
 
   return (
     <div className="container">
-      <div style={{ display: 'flex' }}>
+      <div style={{ display: 'flex', paddingTop: '50px' }}>
         {isLoading ? <Loader /> : <Films movies={data.data.movies} />}
         {isLoading ? <Loader /> : <Sidebar />}
       </div>

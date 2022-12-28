@@ -1,18 +1,26 @@
 import { createSlice } from '@reduxjs/toolkit';
 import { createApi, fetchBaseQuery } from '@reduxjs/toolkit/query/react';
 
+import { BASE_URL } from '../../const';
+
 export const moviesApi = createApi({
   reducerPath: 'moviesApi',
   tagTypes: ['Movies'],
   baseQuery: fetchBaseQuery({
-    baseUrl: 'https://yts.mx/api/v2/list_movies.json',
+    baseUrl: BASE_URL,
   }),
   endpoints: (build) => ({
     getMovies: build.query({
-      query: (page = '') => `movies?${page && `page=${page}`}`,
+      query: (page = '') => `movies?${page && `&page=${page}`}`,
     }),
     getMoviesByGenre: build.query({
-      query: (genre) => `movies?genre=${genre}`,
+      query: (arg) => {
+        const { genre, page } = arg;
+        return {
+          url: `movies?genre=${genre}&page=${page}`,
+          params: { genre, page },
+        };
+      },
     }),
   }),
 });

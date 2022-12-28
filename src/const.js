@@ -11,10 +11,6 @@ export const PATHS = {
 
 export const BASE_URL = `https://yts.mx/api/v2/list_movies.json?limit=30&sort_by=year`; //main
 
-export const PAGE_URL = `https://yts.mx/api/v2/list_movies.json?limit=30&sort_by=year&page=1`; //pages
-
-export const GENRE_URL = `https://yts.mx/api/v2/list_movies.json?limit=30&sort_by=year`; //genre
-
 export const POPULAR_FILMS_URL = `https://yts.mx/api/v2/movie_suggestions.json?`; //popular
 
 export const INFO_FILM_URL =
