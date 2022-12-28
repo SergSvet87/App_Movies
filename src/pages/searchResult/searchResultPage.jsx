@@ -3,10 +3,9 @@ import axios from 'axios';
 import { useDispatch } from 'react-redux';
 import { NavLink, useLoaderData, useParams } from 'react-router-dom';
 import { Pagination, PaginationItem, Stack } from '@mui/material';
-import styles from './searchResultPage.module.scss';
 import { POPULAR_FILMS_URL } from '../../const';
 import {
-  useGetMoviesByGenreQuery,
+  useGetMoviesBySearchQuery,
   addPopularMovies,
 } from '../../redux/movies/movieSlice';
 import { Loader } from '../../components/loader/Loader';
@@ -23,14 +22,14 @@ export const SearchResultPage = () => {
   const params = useParams();
   const [page, setPage] = useState(1);
 
-  const { data, isLoading } = useGetMoviesByGenreQuery({
-    genre: params.genre,
+  const { data, isLoading } = useGetMoviesBySearchQuery({
+    search: params.search,
     page: searchTerm,
   });
 
   const movieLimit = data === undefined ? '' : data.data.limit;
   const movieCount = data === undefined ? '' : data.data.movie_count;
-  const movieId = data === undefined ? '' : data.data.movies[0].id;
+  const movieId = data === undefined ? '' : data?.data?.movies[0].id;
   const pageQty = Math.ceil(movieCount / movieLimit);
 
   useEffect(() => {
@@ -47,34 +46,43 @@ export const SearchResultPage = () => {
     }
   }, [dispatch, movieId, data]);
 
+  const wrongData = data === undefined;
+
   return (
     <div className="container">
-      <h1>Search Page</h1>
-      <div style={{ display: 'flex', paddingTop: '50px' }}>
-        {isLoading ? <Loader /> : <Films movies={data.data.movies} />}
-        {isLoading ? <Loader /> : <Sidebar />}
-      </div>
-      <Stack spacing={2}>
-        {pageQty && (
-          <Pagination
-            color="primary"
-            count={pageQty}
-            page={page}
-            onChange={(_, num) => setPage(num)}
-            showFirstButton
-            showLastButton
-            sx={{ marginY: 3, marginX: 'auto' }}
-            renderItem={(item) => (
-              <PaginationItem
-                component={NavLink}
-                to={`?page=${item.page}`}
-                {...item}
+      {wrongData ? (
+        <>
+          <h1>No movies found for your request.</h1>
+          <h2> Try another query.</h2>
+        </>
+      ) : (
+        <>
+          <div style={{ display: 'flex', paddingTop: '50px' }}>
+            {isLoading ? <Loader /> : <Films movies={data.data.movies} />}
+            {isLoading ? <Loader /> : <Sidebar />}
+          </div>
+          <Stack spacing={2}>
+            {pageQty && (
+              <Pagination
+                color="primary"
+                count={pageQty}
+                page={page}
+                onChange={(_, num) => setPage(num)}
+                showFirstButton
+                showLastButton
+                sx={{ marginY: 3, marginX: 'auto' }}
+                renderItem={(item) => (
+                  <PaginationItem
+                    component={NavLink}
+                    to={`?page=${item.page}`}
+                    {...item}
+                  />
+                )}
               />
             )}
-          />
-        )}
-      </Stack>
+          </Stack>
+        </>
+      )}
     </div>
   );
-  //   }
 };
