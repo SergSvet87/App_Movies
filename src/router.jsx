@@ -2,6 +2,7 @@ import { createHashRouter } from 'react-router-dom';
 
 import { PATHS } from './const';
 import { loaderMovieInfo } from './utils/loaderMovieInfo';
+import { loaderMovieByGenre } from './utils/loaderMovieByGenre';
 import { Layout } from './layout';
 
 import { ErrorPage } from './pages/error/error-page';
@@ -38,6 +39,7 @@ export const router = createHashRouter([
       {
         path: PATHS.genre(),
         element: <MoviesByGenrePage />,
+        loader: loaderMovieByGenre,
       },
       {
         path: '*',
