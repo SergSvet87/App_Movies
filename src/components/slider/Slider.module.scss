@@ -1,0 +1,49 @@
+.sliderContainer {
+  margin-top: 30px;
+  text-align: center;
+  position: relative;
+}
+
+.sliderContainer img {
+  width: 100%;
+  height: 500px;
+  object-fit: cover;
+}
+
+.sliderContainer button {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 3%;
+  height: 12%;
+  border: none;
+  opacity: 0.7;
+  transition: opacity 0.2s;
+}
+
+.sliderContainer button:hover {
+  opacity: 90%;
+  box-shadow: 0 0 5px 1px white;
+}
+
+.sliderContainer button:first-of-type {
+  left: 0px;
+  border-top-right-radius: 5px;
+  border-bottom-right-radius: 5px;
+}
+
+.sliderContainer button:nth-of-type(2) {
+  right: 0px;
+  border-top-left-radius: 5px;
+  border-bottom-left-radius: 5px;
+}
+
+.sliderContainer button:nth-of-type(3) {
+  top: calc(100% - 30px);
+  left: 50%;
+  transform: translate(-50%, 0);
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  padding: 0;
+}
