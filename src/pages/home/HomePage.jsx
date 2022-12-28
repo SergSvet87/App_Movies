@@ -12,7 +12,7 @@ import {
 import { Loader } from '../../components/loader/Loader';
 import { Films } from '../../components/main/films/Films';
 import { Sidebar } from '../../components/main/sidebar/Sidebar';
-import Slider from '../../components/slider/Slider';
+import { Slider } from '../../components/slider/Slider';
 
 export const HomePage = () => {
   const dispatch = useDispatch();
