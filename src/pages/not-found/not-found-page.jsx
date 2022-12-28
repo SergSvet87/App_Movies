@@ -1,5 +1,5 @@
-import React from 'react';
-import { NavLink } from 'react-router-dom';
+import { useEffect } from 'react';
+import { NavLink, useNavigate } from 'react-router-dom';
 
 import image from '../../assets/img/404/dubl.png';
 import { PATHS } from '../../const';
@@ -7,6 +7,14 @@ import { PATHS } from '../../const';
 import styles from './not-found.module.scss';
 
 export const NotFoundPage = () => {
+  const navigate = useNavigate();
+
+  useEffect(() => {
+    setTimeout(() => {
+      navigate(PATHS.home);
+    }, 5000);
+  }, [navigate]);
+
   return (
     <section id="not-found-page" className={styles.notFound}>
       <div className="container">

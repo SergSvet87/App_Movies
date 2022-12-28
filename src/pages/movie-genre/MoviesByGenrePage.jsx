@@ -38,7 +38,7 @@ export const MoviesByGenrePage = () => {
         }
       );
     }
-  }, [dispatch, movieId]);
+  }, [dispatch, movieId, data]);
 
   return (
     <div className="container">
@@ -59,7 +59,7 @@ export const MoviesByGenrePage = () => {
             renderItem={(item) => (
               <PaginationItem
                 component={NavLink}
-                to={`/?page=${item.page}`}
+                to={`?page=${item.page}`}
                 {...item}
               />
             )}

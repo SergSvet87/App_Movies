@@ -37,7 +37,7 @@ export const HomePage = () => {
         }
       );
     }
-  }, [dispatch, movieId]);
+  }, [dispatch, movieId, data]);
 
   return (
     <div className="container">

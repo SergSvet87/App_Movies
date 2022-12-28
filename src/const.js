@@ -6,7 +6,7 @@ export const PATHS = {
   team: '/team',
   movie: '/movie',
   genre: (genre) => (genre ? `&genre=${genre}` : '&genre=:genre'),
-  movieId: (id = null) => (id ? `&movie_id=${id}` : '&movie_id=:id'),
+  movieId: (id = null) => (id ? `/&movie_id=${id}` : '/&movie_id=:id'),
 };
 
 export const BASE_URL = `https://yts.mx/api/v2/list_movies.json?limit=30&sort_by=year`; //main
