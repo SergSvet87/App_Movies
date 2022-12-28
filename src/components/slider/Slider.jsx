@@ -16,8 +16,8 @@ const defaultSlides = [
   'https://i.pinimg.com/736x/30/dc/6c/30dc6cd7a41fd5e25b5ce9415adec6eb.jpg',
 ];
 
-function Slider() {
-  const [slides, setSlides] = useState(defaultSlides);
+export const Slider = () => {
+  const [slides] = useState(defaultSlides);
   const [currentSlide, setCurrentSlide] = useState(0);
 
   useEffect(() => {
@@ -28,7 +28,7 @@ function Slider() {
   });
 
   const next = () => {
-    if (currentSlide === (defaultSlides.length-1)) {
+    if (currentSlide === defaultSlides.length - 1) {
       setCurrentSlide(0);
     } else {
       setCurrentSlide(currentSlide + 1);
@@ -37,14 +37,10 @@ function Slider() {
 
   const prev = () => {
     if (currentSlide === 0) {
-      setCurrentSlide((defaultSlides.length-1));
+      setCurrentSlide(defaultSlides.length - 1);
     } else {
       setCurrentSlide(currentSlide - 1);
     }
-  };
-
-  const dropping = () => {
-    setCurrentSlide(0);
   };
 
   return (
@@ -53,9 +49,6 @@ function Slider() {
       <img src={slides[currentSlide]} alt="slide" />
       <button onClick={prev}>{'<'}</button>
       <button onClick={next}>{'>'}</button>
-      <button onClick={dropping}></button>
     </div>
   );
-}
-
-export default Slider;
+};
