@@ -22,10 +22,23 @@ export const moviesApi = createApi({
         };
       },
     }),
+    getMoviesBySearch: build.query({
+      query: (arg) => {
+        const { search, page } = arg;
+        return {
+          url: `&query_term=${search}&page=${page}`,
+          params: { search, page },
+        };
+      },
+    }),
   }),
 });
 
-export const { useGetMoviesQuery, useGetMoviesByGenreQuery } = moviesApi;
+export const {
+  useGetMoviesQuery,
+  useGetMoviesByGenreQuery,
+  useGetMoviesBySearchQuery,
+} = moviesApi;
 
 const initialState = {
   popularMovies: [],
