@@ -3,6 +3,7 @@ import { createHashRouter } from 'react-router-dom';
 import { PATHS } from './const';
 import { loaderMovieInfo } from './utils/loaderMovieInfo';
 import { loaderMovieByGenre } from './utils/loaderMovieByGenre';
+import { loaderMovieBySearch } from './utils/loaderMovieBySearch';
 import { Layout } from './layout';
 
 import { ErrorPage } from './pages/error/error-page';
@@ -12,6 +13,7 @@ import { AboutPage } from './pages/about/AboutPage';
 import { TeamPage } from './pages/team/TeamPage';
 import { MovieInfoPage } from './pages/movie-info/MovieInfoPage';
 import { MoviesByGenrePage } from './pages/movie-genre/MoviesByGenrePage';
+import { SearchResultPage } from './pages/searchResult/searchResultPage';
 
 export const router = createHashRouter([
   {
@@ -40,6 +42,11 @@ export const router = createHashRouter([
         path: PATHS.genre(),
         element: <MoviesByGenrePage />,
         loader: loaderMovieByGenre,
+      },
+      {
+        path: PATHS.search(),
+        element: <SearchResultPage />,
+        loader: loaderMovieBySearch,
       },
       {
         path: '*',
