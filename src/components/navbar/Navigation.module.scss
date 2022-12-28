@@ -3,21 +3,23 @@
 .nav {
 
   .navList {
-    height: 60px;
+    height  : 60px;
+    position: relative;
     @include flex(space-between, center);
-    overflow-y: hidden;
+    flex-wrap: nowrap;
   }
 
   .nav-item {
-    position     : relative;
-    margin       : 0 15px;
-    padding      : 20px 0;
+    min-width    : 150px;
     font-size    : 18px;
     color        : $gray;
     border-bottom: 3px solid transparent;
     border-top   : 3px solid transparent;
+    @include flex(center, center);
+    transition: 0.3s;
 
     a {
+      padding: 10px 0;
 
       &:first-letter {
         text-transform: uppercase;

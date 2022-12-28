@@ -7,7 +7,7 @@ import { PATHS } from '../../const';
 import logo from '../../assets/img/logo.png';
 import { Search } from './search/Search';
 import { Profile } from './profile/Profile';
-import { Navigation } from './navigation/Navigation';
+import { Navigation } from '../navbar/Navigation';
 
 import styles from './Header.module.scss';
 
@@ -24,7 +24,7 @@ export const Header = ({ onSubmitHandler }) => {
           <Profile />
         </div>
         <div className={styles.bottom}>
-          <Navigation items={GENRES} />
+          <div className={styles.bottomGenres}><Navigation items={GENRES} /></div>
           <Search onSubmitHandler={onSubmitHandler} />
         </div>
       </div>

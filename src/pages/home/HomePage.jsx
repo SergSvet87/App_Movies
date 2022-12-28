@@ -12,6 +12,7 @@ import {
 import { Loader } from '../../components/loader/Loader';
 import { Films } from '../../components/main/films/Films';
 import { Sidebar } from '../../components/main/sidebar/Sidebar';
+import Slider from '../../components/slider/Slider';
 
 export const HomePage = () => {
   const dispatch = useDispatch();
@@ -41,6 +42,7 @@ export const HomePage = () => {
 
   return (
     <div className="container">
+      <Slider />
       <div style={{ display: 'flex', paddingTop: '50px' }}>
         {isLoading ? <Loader /> : <Films movies={data.data.movies} />}
         {isLoading ? <Loader /> : <Sidebar />}
