@@ -1,13 +1,18 @@
-import React from 'react'
+import React, { useState } from 'react';
 
-import styles from './Search.module.scss'
+import styles from './Search.module.scss';
 
-export const Search = ({onSubmitHandler}) => {
-  const [textSearch, setTextSearch] = React.useState('')
+export const Search = () => {
+  const [textSearch, setTextSearch] = useState('');
+
+  function onSubmitHandler(e) {
+    e.preventDefault();
+    console.log('serch_value-->', e.target[0].value);
+  }
 
   return (
     <div className={styles.search}>
-      <form onSubmit={e => onSubmitHandler(e)}>
+      <form onSubmit={(e) => onSubmitHandler(e)}>
         <i className="bx bx-search-alt"></i>
         <input
           id="search"
@@ -17,9 +22,9 @@ export const Search = ({onSubmitHandler}) => {
           value={textSearch}
           onChange={(e) => setTextSearch(e.target.value)}
         />
-        <button>Search</button>
+        <button type="submit">Search</button>
       </form>
       <i className="bx bx-customize"></i>
     </div>
-  )
-}
+  );
+};
